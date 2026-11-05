@@ -1,5 +1,7 @@
 add_executable(test_version test_version.c)
 target_link_libraries(test_version PRIVATE numpy2x)
+# The version is set once, in project() of the top-level CMakeLists.txt.
+target_compile_definitions(test_version PRIVATE NX_EXPECTED_VERSION="${numpy2x_VERSION}")
 add_test(NAME version COMMAND test_version)
 
 # Verifies that NumPy's inner loops can be called from worker threads without the GIL.
