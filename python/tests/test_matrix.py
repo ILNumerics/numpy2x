@@ -73,11 +73,16 @@ def values(rng, shape, dtype):
     return x.reshape(shape)
 
 
-def make(a, view, rng=None):
-    """The NumPy operand: `a` (C order), in F order or viewed."""
+def make(a, view, mode="ready"):
+    """The NumPy operand: `a` (C order), in F order or viewed. Pending
+    operands are copies made by np.where (to_numpy2x): their NumPy
+    counterpart is made the same way (np.where gives empty results zero
+    strides and extent-1 axes the strides of its iteration order)."""
     if view == "F":
-        return np.asfortranarray(a)
-    return VIEWS[view](a)
+        a = np.asfortranarray(a)
+    if mode == "pending":
+        a = np.where(True, a, a)
+    return a if view == "F" else VIEWS[view](a)
 
 
 _COND = []
@@ -189,7 +194,7 @@ UNARY = {
 def test_unary(shape, view, dtype, mode):
     rng = np.random.default_rng(seed((shape, view, dtype)))
     base = values(rng, SHAPES[shape], dtype)
-    a = make(base, view)
+    a = make(base, view, mode)
     for name, f in UNARY.items():
         check(f, (a,), (to_numpy2x(a, base, view, mode),), values_=not deviates(), label=name)
 
@@ -224,10 +229,10 @@ def test_binary(pair, dtypes, views, modes):
     if views[1] in ("step", "rev"):  # views that keep the shape: only on 1-d+ data
         bases[1] = values(rng, pair[1][:-1] + (2 * pair[1][-1],), dtypes[1]) \
             if views[1] == "step" and pair[1] else bases[1]
-    nps = [make(b, v) for b, v in zip(bases, views)]
+    nps = [make(b, v, m) for b, v, m in zip(bases, views, modes)]
     if views[0] == "T":
         bases[0] = values(rng, pair[0][::-1], dtypes[0])
-        nps[0] = bases[0].T
+        nps[0] = make(bases[0], "T", modes[0])
     vps = [to_numpy2x(a, b, v, m) for a, b, v, m in zip(nps, bases, views, modes)]
     for name, f in BINARY.items():
         check(f, tuple(nps), tuple(vps), values_=not deviates(), label=name)
@@ -254,7 +259,7 @@ REDUCTIONS = {
 def test_reductions(shape, view, dtype, mode, keepdims):
     rng = np.random.default_rng(seed((shape, view, dtype)))
     base = values(rng, SHAPES[shape], dtype)
-    a = make(base, view)
+    a = make(base, view, mode)
     axes = [None] + list(range(-a.ndim, a.ndim))[:3] + ([(0, a.ndim - 1)] if a.ndim > 1 else [])
     for (name, f), axis in itertools.product(REDUCTIONS.items(), axes):
         if name == "argmax" and isinstance(axis, tuple):
@@ -277,7 +282,7 @@ def test_casts(shape, view, cast, mode):
     base = values(rng, SHAPES[shape], cast[0])
     if np.dtype(cast[0]).kind == "f":  # large values: overflow on the way to integers
         base = base * np.asarray(1e9, base.dtype)
-    a = make(base, view)
+    a = make(base, view, mode)
     v = to_numpy2x(a, base, view, mode)
     for order in ("K", "C", "F"):
         check(lambda x: x.astype(cast[1], order=order), (a,), (v,), label=f"astype {order}")
@@ -312,7 +317,7 @@ def keys(shape):
 def test_indexing(shape, view, dtype, mode):
     rng = np.random.default_rng(seed((shape, view, dtype)))
     base = values(rng, SHAPES[shape], dtype)
-    a = make(base, view)
+    a = make(base, view, mode)
     v = to_numpy2x(a, base, view, mode)
     for key in keys(a.shape):
         check(lambda x: x[key], (a,), (v,), label=f"x[{key!r}]")
