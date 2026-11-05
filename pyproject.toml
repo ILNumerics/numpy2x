@@ -1,0 +1,52 @@
+# pip install . builds numpy2x with CMake (scikit-build-core) and installs the
+# package. Development loop: dev.cmd (Windows) / ./dev.sh (Linux): pull,
+# build into .venv, test.
+[build-system]
+requires = ["scikit-build-core>=0.10", "numpy>=2.5"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "numpy2x"
+dynamic = ["version"]
+description = "Instruction-level parallelism for the array instructions of NumPy programs"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.5"]
+license = { text = "BSD-3-Clause-Clear; patents: see PATENTS" }
+
+[project.urls]
+Homepage = "https://github.com/ILNumerics/numpy2x"
+Patents = "https://ilnumerics.net/patents.html"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.scikit-build]
+minimum-version = "0.10"
+cmake.version = ">=3.24"
+cmake.build-type = "Release"
+# Persistent build directory: rebuilds after a pull are incremental.
+build-dir = "build/pip-{wheel_tag}"
+# The package is installed by CMake (install() rules for SKBUILD).
+wheel.packages = []
+# LICENSE, NOTICE and PATENTS go into every wheel.
+wheel.license-files = ["LICENSE", "NOTICE", "PATENTS"]
+sdist.exclude = ["build*", "reports", ".venv"]
+
+[tool.scikit-build.cmake.define]
+NUMPY2X_BUILD_TESTS = "OFF"
+
+[tool.scikit-build.metadata.version]
+provider = "scikit_build_core.metadata.regex"
+input = "CMakeLists.txt"
+regex = 'project\(numpy2x VERSION (?P<value>[0-9.]+)'
+
+# Prebuilt wheels (.github/workflows/wheels.yml): one per CPython version (the
+# extension uses CPython internals, no abi3), 64-bit Windows and glibc Linux.
+# Python 3.14 is not supported yet (resize tests fail there).
+[tool.cibuildwheel]
+build = "cp312-* cp313-*"
+skip = "*-musllinux_* *-win32 *_i686"
+archs = ["auto64"]
+test-requires = ["pytest"]
+test-command = "python -m pytest -q {project}/python/tests"

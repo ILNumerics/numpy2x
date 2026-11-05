@@ -1,0 +1,7908 @@
+{
+ "machine": {
+  "label": "windows",
+  "os": "Windows-11-10.0.26200-SP0",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-12700K",
+  "cores": 12,
+  "hardware_threads": 20,
+  "logical_cpus": 20,
+  "ram_bytes": 68448337920,
+  "python": "3.13.2",
+  "numpy": "2.5.4",
+  "numpy2x": "0.1.0",
+  "build": "2026-11-02T10:43:57 #1fa2bfff",
+  "build_type": "",
+  "elision": "backtrace",
+  "blas_threads": "default",
+  "date": "2026-11-02T11:11:27",
+  "workers": 2,
+  "repeat": 3,
+  "target_s": 0.04,
+  "rows": [
+   1,
+   3,
+   10,
+   32,
+   100,
+   316,
+   1000
+  ],
+  "cols": [
+   1,
+   3,
+   10,
+   32,
+   100,
+   316,
+   1000
+  ],
+  "cases": 7,
+  "module": false
+ },
+ "results": [
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.0063090999610722065,
+   "numpy2x_s": 0.006120500038377941,
+   "speedup": 1.0308144631176652,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [],
+   "shape_key": "0-d",
+   "elements": 1
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.03225109993945807,
+   "numpy2x_s": 0.023944900021888316,
+   "speedup": 1.3468880600869897,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [],
+   "shape_key": "0-d",
+   "elements": 1
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.03154469991568476,
+   "numpy2x_s": 0.02339899993967265,
+   "speedup": 1.348121714475549,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [],
+   "shape_key": "0-d",
+   "elements": 1
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.006857100059278309,
+   "numpy2x_s": 0.006951099960133433,
+   "speedup": 0.9864769746667088,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [],
+   "shape_key": "0-d",
+   "elements": 1
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 48965,
+   "numpy_s": 0.03859100001864135,
+   "numpy2x_s": 0.03802959993481636,
+   "speedup": 1.0147621874746842,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [],
+   "shape_key": "0-d",
+   "elements": 1
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 39175,
+   "numpy_s": 0.03714839997701347,
+   "numpy2x_s": 0.0373064000159502,
+   "speedup": 0.9957648007079434,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [],
+   "shape_key": "0-d",
+   "elements": 1
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.018554000067524612,
+   "numpy2x_s": 0.033602200099267066,
+   "speedup": 0.5521662275896426,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1
+   ],
+   "shape_key": "1x1",
+   "elements": 1
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.019611100084148347,
+   "numpy2x_s": 0.024759700056165457,
+   "speedup": 0.7920572559304875,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1
+   ],
+   "shape_key": "1x1",
+   "elements": 1
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.019516600063070655,
+   "numpy2x_s": 0.023771199979819357,
+   "speedup": 0.8210187150686268,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1
+   ],
+   "shape_key": "1x1",
+   "elements": 1
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 57909,
+   "numpy_s": 0.03952760004904121,
+   "numpy2x_s": 0.02788959990721196,
+   "speedup": 1.4172881712376155,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1
+   ],
+   "shape_key": "1x1",
+   "elements": 1
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020008100080303848,
+   "numpy2x_s": 0.03410179994534701,
+   "speedup": 0.586716833491771,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1
+   ],
+   "shape_key": "1x1",
+   "elements": 1
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 48971,
+   "numpy_s": 0.04054409998934716,
+   "numpy2x_s": 0.05042610003147274,
+   "speedup": 0.804030055150847,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1
+   ],
+   "shape_key": "1x1",
+   "elements": 1
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 31782,
+   "numpy_s": 0.04015190002974123,
+   "numpy2x_s": 0.04564799997024238,
+   "speedup": 0.8795982311583416,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1
+   ],
+   "shape_key": "1x1",
+   "elements": 1
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.019012999953702092,
+   "numpy2x_s": 0.03458090010099113,
+   "speedup": 0.5498121766112489,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    3
+   ],
+   "shape_key": "1x3",
+   "elements": 3
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.01992620003875345,
+   "numpy2x_s": 0.024551899987272918,
+   "speedup": 0.8115950313044077,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    3
+   ],
+   "shape_key": "1x3",
+   "elements": 3
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02002239995636046,
+   "numpy2x_s": 0.02491609996650368,
+   "speedup": 0.8035928569590691,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    3
+   ],
+   "shape_key": "1x3",
+   "elements": 3
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 56431,
+   "numpy_s": 0.04044909996446222,
+   "numpy2x_s": 0.028370099957101047,
+   "speedup": 1.4257651550620567,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    3
+   ],
+   "shape_key": "1x3",
+   "elements": 3
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.01993800001218915,
+   "numpy2x_s": 0.03393030003644526,
+   "speedup": 0.5876163780094287,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    3
+   ],
+   "shape_key": "1x3",
+   "elements": 3
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 49105,
+   "numpy_s": 0.04020759998820722,
+   "numpy2x_s": 0.0509939999319613,
+   "speedup": 0.7884770765551669,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    3
+   ],
+   "shape_key": "1x3",
+   "elements": 3
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 30831,
+   "numpy_s": 0.03974269994068891,
+   "numpy2x_s": 0.04421880003064871,
+   "speedup": 0.8987738227437798,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    3
+   ],
+   "shape_key": "1x3",
+   "elements": 3
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020449600066058338,
+   "numpy2x_s": 0.03545429999940097,
+   "speedup": 0.5767875847613364,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    10
+   ],
+   "shape_key": "1x10",
+   "elements": 10
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020789399975910783,
+   "numpy2x_s": 0.024922400014474988,
+   "speedup": 0.834165247481633,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    10
+   ],
+   "shape_key": "1x10",
+   "elements": 10
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020328699960373342,
+   "numpy2x_s": 0.024918399984017015,
+   "speedup": 0.8158108054053405,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    10
+   ],
+   "shape_key": "1x10",
+   "elements": 10
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 51710,
+   "numpy_s": 0.037124899914488196,
+   "numpy2x_s": 0.02706429990939796,
+   "speedup": 1.3717295492131587,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    10
+   ],
+   "shape_key": "1x10",
+   "elements": 10
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020055999979376793,
+   "numpy2x_s": 0.03388129989616573,
+   "speedup": 0.5919489523967906,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    10
+   ],
+   "shape_key": "1x10",
+   "elements": 10
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 48115,
+   "numpy_s": 0.040374199976213276,
+   "numpy2x_s": 0.05092089995741844,
+   "speedup": 0.7928807230425104,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    10
+   ],
+   "shape_key": "1x10",
+   "elements": 10
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 27621,
+   "numpy_s": 0.03821540006902069,
+   "numpy2x_s": 0.04382429993711412,
+   "speedup": 0.8720139311719309,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    10
+   ],
+   "shape_key": "1x10",
+   "elements": 10
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02212760003749281,
+   "numpy2x_s": 0.040682799997739494,
+   "speedup": 0.5439055335110247,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    32
+   ],
+   "shape_key": "1x32",
+   "elements": 32
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020999799948185682,
+   "numpy2x_s": 0.027252400061115623,
+   "speedup": 0.7705669923049714,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    32
+   ],
+   "shape_key": "1x32",
+   "elements": 32
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.01986400003079325,
+   "numpy2x_s": 0.026614499976858497,
+   "speedup": 0.7463600686868115,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    32
+   ],
+   "shape_key": "1x32",
+   "elements": 32
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 52088,
+   "numpy_s": 0.040264599956572056,
+   "numpy2x_s": 0.03201950003858656,
+   "speedup": 1.257502456567072,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    32
+   ],
+   "shape_key": "1x32",
+   "elements": 32
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.019986100029200315,
+   "numpy2x_s": 0.036679200013168156,
+   "speedup": 0.5448892021097823,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    32
+   ],
+   "shape_key": "1x32",
+   "elements": 32
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 46926,
+   "numpy_s": 0.04006359993945807,
+   "numpy2x_s": 0.05433920002542436,
+   "speedup": 0.7372872607751497,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    32
+   ],
+   "shape_key": "1x32",
+   "elements": 32
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 23889,
+   "numpy_s": 0.040472400025464594,
+   "numpy2x_s": 0.046220800024457276,
+   "speedup": 0.8756317502953005,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    32
+   ],
+   "shape_key": "1x32",
+   "elements": 32
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02819510002154857,
+   "numpy2x_s": 0.04769569996278733,
+   "speedup": 0.5911455339484832,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    100
+   ],
+   "shape_key": "1x100",
+   "elements": 100
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021361899911426008,
+   "numpy2x_s": 0.028954299981705844,
+   "speedup": 0.7377798781156191,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    100
+   ],
+   "shape_key": "1x100",
+   "elements": 100
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02123149996623397,
+   "numpy2x_s": 0.029436200042255223,
+   "speedup": 0.7212717652331643,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    100
+   ],
+   "shape_key": "1x100",
+   "elements": 100
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 31110,
+   "numpy_s": 0.041027799947187304,
+   "numpy2x_s": 0.0360958999954164,
+   "speedup": 1.136633245116403,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    100
+   ],
+   "shape_key": "1x100",
+   "elements": 100
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02095549996010959,
+   "numpy2x_s": 0.03783040004782379,
+   "speedup": 0.5539328141816747,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    100
+   ],
+   "shape_key": "1x100",
+   "elements": 100
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 41059,
+   "numpy_s": 0.039598100003786385,
+   "numpy2x_s": 0.053381500067189336,
+   "speedup": 0.741794441031925,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    100
+   ],
+   "shape_key": "1x100",
+   "elements": 100
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 15774,
+   "numpy_s": 0.04027140000835061,
+   "numpy2x_s": 0.03036540001630783,
+   "speedup": 1.326226560055943,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    100
+   ],
+   "shape_key": "1x100",
+   "elements": 100
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 52875,
+   "numpy_s": 0.03956619999371469,
+   "numpy2x_s": 0.03442110004834831,
+   "speedup": 1.149475174766045,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    316
+   ],
+   "shape_key": "1x316",
+   "elements": 316
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.024264900013804436,
+   "numpy2x_s": 0.029985200031660497,
+   "speedup": 0.8092292193543427,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    316
+   ],
+   "shape_key": "1x316",
+   "elements": 316
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.028497599996626377,
+   "numpy2x_s": 0.03553840005770326,
+   "speedup": 0.8018819066236853,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    316
+   ],
+   "shape_key": "1x316",
+   "elements": 316
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 4598,
+   "numpy_s": 0.03840119997039437,
+   "numpy2x_s": 0.023875299957580864,
+   "speedup": 1.6084070163986048,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    316
+   ],
+   "shape_key": "1x316",
+   "elements": 316
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.023327399976551533,
+   "numpy2x_s": 0.040040899999439716,
+   "speedup": 0.582589301860796,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    316
+   ],
+   "shape_key": "1x316",
+   "elements": 316
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 29474,
+   "numpy_s": 0.03982129995711148,
+   "numpy2x_s": 0.04423959995619953,
+   "speedup": 0.9001279395956905,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    316
+   ],
+   "shape_key": "1x316",
+   "elements": 316
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7133,
+   "numpy_s": 0.04033940006047487,
+   "numpy2x_s": 0.03454080002848059,
+   "speedup": 1.1678768305080673,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    316
+   ],
+   "shape_key": "1x316",
+   "elements": 316
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 22964,
+   "numpy_s": 0.039164099958725274,
+   "numpy2x_s": 0.03632610000204295,
+   "speedup": 1.0781256440003941,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1000
+   ],
+   "shape_key": "1x1000",
+   "elements": 1000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.030750099918805063,
+   "numpy2x_s": 0.03228980000130832,
+   "speedup": 0.9523162087581567,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1000
+   ],
+   "shape_key": "1x1000",
+   "elements": 1000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 50148,
+   "numpy_s": 0.03898960002698004,
+   "numpy2x_s": 0.03390510007739067,
+   "speedup": 1.1499626881496783,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1000
+   ],
+   "shape_key": "1x1000",
+   "elements": 1000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 361,
+   "numpy_s": 0.03904870001133531,
+   "numpy2x_s": 0.03685049992054701,
+   "speedup": 1.0596518390667107,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1000
+   ],
+   "shape_key": "1x1000",
+   "elements": 1000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.030381400021724403,
+   "numpy2x_s": 0.04437110002618283,
+   "speedup": 0.6847114451477813,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1000
+   ],
+   "shape_key": "1x1000",
+   "elements": 1000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 16486,
+   "numpy_s": 0.03990720002911985,
+   "numpy2x_s": 0.03056000010110438,
+   "speedup": 1.3058638709781183,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1000
+   ],
+   "shape_key": "1x1000",
+   "elements": 1000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2554,
+   "numpy_s": 0.03997100004926324,
+   "numpy2x_s": 0.03837369999382645,
+   "speedup": 1.0416248643131563,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1,
+    1000
+   ],
+   "shape_key": "1x1000",
+   "elements": 1000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.018947600037790835,
+   "numpy2x_s": 0.033756099990569055,
+   "speedup": 0.5613089202569168,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1
+   ],
+   "shape_key": "3x1",
+   "elements": 3
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020069700083695352,
+   "numpy2x_s": 0.023784999968484044,
+   "speedup": 0.8437965150426069,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1
+   ],
+   "shape_key": "3x1",
+   "elements": 3
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.019495099899359047,
+   "numpy2x_s": 0.02463040000293404,
+   "speedup": 0.7915056148920334,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1
+   ],
+   "shape_key": "3x1",
+   "elements": 3
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 58380,
+   "numpy_s": 0.039445400005206466,
+   "numpy2x_s": 0.028183600050397217,
+   "speedup": 1.399586991536609,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1
+   ],
+   "shape_key": "3x1",
+   "elements": 3
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02016289997845888,
+   "numpy2x_s": 0.034185700002126396,
+   "speedup": 0.5898050932759815,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1
+   ],
+   "shape_key": "3x1",
+   "elements": 3
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 47299,
+   "numpy_s": 0.038835000013932586,
+   "numpy2x_s": 0.0499853000510484,
+   "speedup": 0.776928416439866,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1
+   ],
+   "shape_key": "3x1",
+   "elements": 3
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 30941,
+   "numpy_s": 0.04038069990929216,
+   "numpy2x_s": 0.04438400000799447,
+   "speedup": 0.9098030799842007,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1
+   ],
+   "shape_key": "3x1",
+   "elements": 3
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.019766599987633526,
+   "numpy2x_s": 0.033264099969528615,
+   "speedup": 0.5942322204941846,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    3
+   ],
+   "shape_key": "3x3",
+   "elements": 9
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02066100004594773,
+   "numpy2x_s": 0.02293209999334067,
+   "speedup": 0.900964152953613,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    3
+   ],
+   "shape_key": "3x3",
+   "elements": 9
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020350400009192526,
+   "numpy2x_s": 0.02375619998201728,
+   "speedup": 0.8566353214991101,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    3
+   ],
+   "shape_key": "3x3",
+   "elements": 9
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 49240,
+   "numpy_s": 0.03996780002489686,
+   "numpy2x_s": 0.03642499994020909,
+   "speedup": 1.0972628713933619,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    3
+   ],
+   "shape_key": "3x3",
+   "elements": 9
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02000020002014935,
+   "numpy2x_s": 0.03282500000204891,
+   "speedup": 0.609297791893403,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    3
+   ],
+   "shape_key": "3x3",
+   "elements": 9
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 46394,
+   "numpy_s": 0.0383036999264732,
+   "numpy2x_s": 0.04912979993969202,
+   "speedup": 0.7796429045811685,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    3
+   ],
+   "shape_key": "3x3",
+   "elements": 9
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 29211,
+   "numpy_s": 0.03966840007342398,
+   "numpy2x_s": 0.04399639996699989,
+   "speedup": 0.9016283173891004,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    3
+   ],
+   "shape_key": "3x3",
+   "elements": 9
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.022468100069090724,
+   "numpy2x_s": 0.03917389991693199,
+   "speedup": 0.5735476967249672,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    10
+   ],
+   "shape_key": "3x10",
+   "elements": 30
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02112329995725304,
+   "numpy2x_s": 0.025521400035358965,
+   "speedup": 0.8276701093195311,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    10
+   ],
+   "shape_key": "3x10",
+   "elements": 30
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020380500005558133,
+   "numpy2x_s": 0.025561499991454184,
+   "speedup": 0.7973123647818718,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    10
+   ],
+   "shape_key": "3x10",
+   "elements": 30
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 47827,
+   "numpy_s": 0.03979500010609627,
+   "numpy2x_s": 0.032787300064228475,
+   "speedup": 1.2137321471466118,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    10
+   ],
+   "shape_key": "3x10",
+   "elements": 30
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02006969996728003,
+   "numpy2x_s": 0.03549630008637905,
+   "speedup": 0.5654025889583165,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    10
+   ],
+   "shape_key": "3x10",
+   "elements": 30
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 45829,
+   "numpy_s": 0.038583199959248304,
+   "numpy2x_s": 0.051791800069622695,
+   "speedup": 0.7449673482555476,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    10
+   ],
+   "shape_key": "3x10",
+   "elements": 30
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 24272,
+   "numpy_s": 0.03923699993174523,
+   "numpy2x_s": 0.044909399934113026,
+   "speedup": 0.8736923670614655,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    10
+   ],
+   "shape_key": "3x10",
+   "elements": 30
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.027847999939695,
+   "numpy2x_s": 0.045737599954009056,
+   "speedup": 0.6088644784093886,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    32
+   ],
+   "shape_key": "3x32",
+   "elements": 96
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021020299987867475,
+   "numpy2x_s": 0.026937599992379546,
+   "speedup": 0.7803330658192996,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    32
+   ],
+   "shape_key": "3x32",
+   "elements": 96
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020830900059081614,
+   "numpy2x_s": 0.027620499953627586,
+   "speedup": 0.7541825851832834,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    32
+   ],
+   "shape_key": "3x32",
+   "elements": 96
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 33735,
+   "numpy_s": 0.03922119992785156,
+   "numpy2x_s": 0.03245889989193529,
+   "speedup": 1.208334233705697,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    32
+   ],
+   "shape_key": "3x32",
+   "elements": 96
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020350400009192526,
+   "numpy2x_s": 0.037187199923209846,
+   "speedup": 0.5472420631619301,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    32
+   ],
+   "shape_key": "3x32",
+   "elements": 96
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 41374,
+   "numpy_s": 0.039694399922154844,
+   "numpy2x_s": 0.05398219998460263,
+   "speedup": 0.7353238647827783,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    32
+   ],
+   "shape_key": "3x32",
+   "elements": 96
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 16247,
+   "numpy_s": 0.04022910003550351,
+   "numpy2x_s": 0.030773799982853234,
+   "speedup": 1.307251625016041,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    32
+   ],
+   "shape_key": "3x32",
+   "elements": 96
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 55244,
+   "numpy_s": 0.04024370003025979,
+   "numpy2x_s": 0.035353199928067625,
+   "speedup": 1.1383326010698538,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    100
+   ],
+   "shape_key": "3x100",
+   "elements": 300
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.023845199961215258,
+   "numpy2x_s": 0.02795939997304231,
+   "speedup": 0.8528509189827446,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    100
+   ],
+   "shape_key": "3x100",
+   "elements": 300
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.027711700065992773,
+   "numpy2x_s": 0.0327759999781847,
+   "speedup": 0.845487554443414,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    100
+   ],
+   "shape_key": "3x100",
+   "elements": 300
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8060,
+   "numpy_s": 0.040021899971179664,
+   "numpy2x_s": 0.038909099996089935,
+   "speedup": 1.0285999926804155,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    100
+   ],
+   "shape_key": "3x100",
+   "elements": 300
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02310140000190586,
+   "numpy2x_s": 0.038271899917162955,
+   "speedup": 0.6036125735045123,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    100
+   ],
+   "shape_key": "3x100",
+   "elements": 300
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 30491,
+   "numpy_s": 0.03876040002796799,
+   "numpy2x_s": 0.04594260000158101,
+   "speedup": 0.8436701454996917,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    100
+   ],
+   "shape_key": "3x100",
+   "elements": 300
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7650,
+   "numpy_s": 0.03939629998058081,
+   "numpy2x_s": 0.03420120000373572,
+   "speedup": 1.1518981783176507,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    100
+   ],
+   "shape_key": "3x100",
+   "elements": 300
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24156,
+   "numpy_s": 0.03962279995903373,
+   "numpy2x_s": 0.03555120003875345,
+   "speedup": 1.1145277772857718,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    316
+   ],
+   "shape_key": "3x316",
+   "elements": 948
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.031198900076560676,
+   "numpy2x_s": 0.03019530000165105,
+   "speedup": 1.0332369631980722,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    316
+   ],
+   "shape_key": "3x316",
+   "elements": 948
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 51296,
+   "numpy_s": 0.03922440006863326,
+   "numpy2x_s": 0.03298010001890361,
+   "speedup": 1.1893353884964122,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    316
+   ],
+   "shape_key": "3x316",
+   "elements": 948
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 814,
+   "numpy_s": 0.03974889998789877,
+   "numpy2x_s": 0.03946329990867525,
+   "speedup": 1.0072371058650553,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    316
+   ],
+   "shape_key": "3x316",
+   "elements": 948
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65100,
+   "numpy_s": 0.029512199922464788,
+   "numpy2x_s": 0.04186440003104508,
+   "speedup": 0.7049473992360965,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    316
+   ],
+   "shape_key": "3x316",
+   "elements": 948
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 16719,
+   "numpy_s": 0.03952909994404763,
+   "numpy2x_s": 0.030097000068053603,
+   "speedup": 1.3133900340454765,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    316
+   ],
+   "shape_key": "3x316",
+   "elements": 948
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2623,
+   "numpy_s": 0.03962209995370358,
+   "numpy2x_s": 0.03709969995543361,
+   "speedup": 1.0679897681463741,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    316
+   ],
+   "shape_key": "3x316",
+   "elements": 948
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8629,
+   "numpy_s": 0.03953469998668879,
+   "numpy2x_s": 0.03683979995548725,
+   "speedup": 1.0731518638661919,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1000
+   ],
+   "shape_key": "3x1000",
+   "elements": 3000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 41464,
+   "numpy_s": 0.03996780002489686,
+   "numpy2x_s": 0.02128009998705238,
+   "speedup": 1.8781772665172993,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1000
+   ],
+   "shape_key": "3x1000",
+   "elements": 3000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 22984,
+   "numpy_s": 0.038894199999049306,
+   "numpy2x_s": 0.03402260004077107,
+   "speedup": 1.1431871741854045,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1000
+   ],
+   "shape_key": "3x1000",
+   "elements": 3000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 191,
+   "numpy_s": 0.041836699936538935,
+   "numpy2x_s": 0.040392199996858835,
+   "speedup": 1.0357618535210371,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1000
+   ],
+   "shape_key": "3x1000",
+   "elements": 3000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 46741,
+   "numpy_s": 0.03840610000770539,
+   "numpy2x_s": 0.03342789993621409,
+   "speedup": 1.1489235064419399,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1000
+   ],
+   "shape_key": "3x1000",
+   "elements": 3000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7138,
+   "numpy_s": 0.04026409995276481,
+   "numpy2x_s": 0.03357359999790788,
+   "speedup": 1.1992785985200827,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1000
+   ],
+   "shape_key": "3x1000",
+   "elements": 3000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 843,
+   "numpy_s": 0.040027600014582276,
+   "numpy2x_s": 0.038692599977366626,
+   "speedup": 1.0345027224326244,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    3,
+    1000
+   ],
+   "shape_key": "3x1000",
+   "elements": 3000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02087859995663166,
+   "numpy2x_s": 0.035937200067564845,
+   "speedup": 0.5809745867062043,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1
+   ],
+   "shape_key": "10x1",
+   "elements": 10
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021422100020572543,
+   "numpy2x_s": 0.024666900048032403,
+   "speedup": 0.8684552975387482,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1
+   ],
+   "shape_key": "10x1",
+   "elements": 10
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020893099950626493,
+   "numpy2x_s": 0.025830800062976778,
+   "speedup": 0.8088444763494771,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1
+   ],
+   "shape_key": "10x1",
+   "elements": 10
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 56832,
+   "numpy_s": 0.03947160008829087,
+   "numpy2x_s": 0.028123200056143105,
+   "speedup": 1.4035244925717076,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1
+   ],
+   "shape_key": "10x1",
+   "elements": 10
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020633399952203035,
+   "numpy2x_s": 0.034923900035209954,
+   "speedup": 0.590810302726804,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1
+   ],
+   "shape_key": "10x1",
+   "elements": 10
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 47948,
+   "numpy_s": 0.03993790003005415,
+   "numpy2x_s": 0.05239730002358556,
+   "speedup": 0.7622129386834233,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1
+   ],
+   "shape_key": "10x1",
+   "elements": 10
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 27818,
+   "numpy_s": 0.04041530005633831,
+   "numpy2x_s": 0.0434065000154078,
+   "speedup": 0.9310886628037801,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1
+   ],
+   "shape_key": "10x1",
+   "elements": 10
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.023053199984133244,
+   "numpy2x_s": 0.04097540001384914,
+   "speedup": 0.5626107365966304,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    3
+   ],
+   "shape_key": "10x3",
+   "elements": 30
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021171599975787103,
+   "numpy2x_s": 0.025903499918058515,
+   "speedup": 0.8173258456486574,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    3
+   ],
+   "shape_key": "10x3",
+   "elements": 30
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02103880001232028,
+   "numpy2x_s": 0.02618290006648749,
+   "speedup": 0.803532074708892,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    3
+   ],
+   "shape_key": "10x3",
+   "elements": 30
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 47329,
+   "numpy_s": 0.03986160003114492,
+   "numpy2x_s": 0.03229779994580895,
+   "speedup": 1.2341893286238361,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    3
+   ],
+   "shape_key": "10x3",
+   "elements": 30
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02107130002696067,
+   "numpy2x_s": 0.03529649996198714,
+   "speedup": 0.5969798719321628,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    3
+   ],
+   "shape_key": "10x3",
+   "elements": 30
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 44387,
+   "numpy_s": 0.03873420006129891,
+   "numpy2x_s": 0.05364629998803139,
+   "speedup": 0.7220292931654297,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    3
+   ],
+   "shape_key": "10x3",
+   "elements": 30
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 23664,
+   "numpy_s": 0.04015919996891171,
+   "numpy2x_s": 0.045588399982079864,
+   "speedup": 0.8809083008988625,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    3
+   ],
+   "shape_key": "10x3",
+   "elements": 30
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.029538500006310642,
+   "numpy2x_s": 0.04770929994992912,
+   "speedup": 0.6191350541154719,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    10
+   ],
+   "shape_key": "10x10",
+   "elements": 100
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021927400026470423,
+   "numpy2x_s": 0.02798610005993396,
+   "speedup": 0.7835103847807141,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    10
+   ],
+   "shape_key": "10x10",
+   "elements": 100
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021341999992728233,
+   "numpy2x_s": 0.02827769995201379,
+   "speedup": 0.7547289924196386,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    10
+   ],
+   "shape_key": "10x10",
+   "elements": 100
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 43828,
+   "numpy_s": 0.03986090002581477,
+   "numpy2x_s": 0.03241930005606264,
+   "speedup": 1.229542277497768,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    10
+   ],
+   "shape_key": "10x10",
+   "elements": 100
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020505900029093027,
+   "numpy2x_s": 0.03759560000617057,
+   "speedup": 0.545433508860808,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    10
+   ],
+   "shape_key": "10x10",
+   "elements": 100
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 40928,
+   "numpy_s": 0.03991689998656511,
+   "numpy2x_s": 0.0542982000624761,
+   "speedup": 0.7351422319825758,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    10
+   ],
+   "shape_key": "10x10",
+   "elements": 100
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 15716,
+   "numpy_s": 0.04010670003481209,
+   "numpy2x_s": 0.030574899981729686,
+   "speedup": 1.3117524524619286,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    10
+   ],
+   "shape_key": "10x10",
+   "elements": 100
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 51721,
+   "numpy_s": 0.03923400002531707,
+   "numpy2x_s": 0.03415269998367876,
+   "speedup": 1.148781795994654,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    32
+   ],
+   "shape_key": "10x32",
+   "elements": 320
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02418429998215288,
+   "numpy2x_s": 0.028251999989151955,
+   "speedup": 0.8560208123828059,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    32
+   ],
+   "shape_key": "10x32",
+   "elements": 320
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.0289535999763757,
+   "numpy2x_s": 0.03385919996071607,
+   "speedup": 0.855117664031285,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    32
+   ],
+   "shape_key": "10x32",
+   "elements": 320
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 26852,
+   "numpy_s": 0.04014020005706698,
+   "numpy2x_s": 0.03519450000021607,
+   "speedup": 1.1405247995232366,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    32
+   ],
+   "shape_key": "10x32",
+   "elements": 320
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.023282999987713993,
+   "numpy2x_s": 0.03840780002065003,
+   "speedup": 0.6062049889656748,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    32
+   ],
+   "shape_key": "10x32",
+   "elements": 320
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 30162,
+   "numpy_s": 0.04075449996162206,
+   "numpy2x_s": 0.04492319992277771,
+   "speedup": 0.9072038508316063,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    32
+   ],
+   "shape_key": "10x32",
+   "elements": 320
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7042,
+   "numpy_s": 0.03971630008891225,
+   "numpy2x_s": 0.034320899983868,
+   "speedup": 1.1572045053474782,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    32
+   ],
+   "shape_key": "10x32",
+   "elements": 320
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 23031,
+   "numpy_s": 0.039789500064216554,
+   "numpy2x_s": 0.035917900037020445,
+   "speedup": 1.107790266780788,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    100
+   ],
+   "shape_key": "10x100",
+   "elements": 1000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.03358769998885691,
+   "numpy2x_s": 0.031000399962067604,
+   "speedup": 1.083460214382884,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    100
+   ],
+   "shape_key": "10x100",
+   "elements": 1000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 51733,
+   "numpy_s": 0.040111000067554414,
+   "numpy2x_s": 0.034622799954377115,
+   "speedup": 1.1585140462472465,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    100
+   ],
+   "shape_key": "10x100",
+   "elements": 1000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 5610,
+   "numpy_s": 0.04037069994956255,
+   "numpy2x_s": 0.03730929992161691,
+   "speedup": 1.0820546092898373,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    100
+   ],
+   "shape_key": "10x100",
+   "elements": 1000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.031160299899056554,
+   "numpy2x_s": 0.04223330004606396,
+   "speedup": 0.7378135230983593,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    100
+   ],
+   "shape_key": "10x100",
+   "elements": 1000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 16126,
+   "numpy_s": 0.03926670004148036,
+   "numpy2x_s": 0.030301099992357194,
+   "speedup": 1.2958836494841623,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    100
+   ],
+   "shape_key": "10x100",
+   "elements": 1000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2518,
+   "numpy_s": 0.039529599947854877,
+   "numpy2x_s": 0.03714229993056506,
+   "speedup": 1.064274426240505,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    100
+   ],
+   "shape_key": "10x100",
+   "elements": 1000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8444,
+   "numpy_s": 0.04017080005723983,
+   "numpy2x_s": 0.037700299988500774,
+   "speedup": 1.0655299843633235,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    316
+   ],
+   "shape_key": "10x316",
+   "elements": 3160
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 41532,
+   "numpy_s": 0.04170079994946718,
+   "numpy2x_s": 0.02338740008417517,
+   "speedup": 1.7830455629689073,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    316
+   ],
+   "shape_key": "10x316",
+   "elements": 3160
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 22538,
+   "numpy_s": 0.039940099930390716,
+   "numpy2x_s": 0.034407899947836995,
+   "speedup": 1.1607828432116065,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    316
+   ],
+   "shape_key": "10x316",
+   "elements": 3160
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 862,
+   "numpy_s": 0.0386732000624761,
+   "numpy2x_s": 0.036455699941143394,
+   "speedup": 1.0608272540346995,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    316
+   ],
+   "shape_key": "10x316",
+   "elements": 3160
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 44973,
+   "numpy_s": 0.038242600043304265,
+   "numpy2x_s": 0.03111479990184307,
+   "speedup": 1.2290806999867283,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    316
+   ],
+   "shape_key": "10x316",
+   "elements": 3160
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 6811,
+   "numpy_s": 0.03984059998765588,
+   "numpy2x_s": 0.03375280008185655,
+   "speedup": 1.18036429247456,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    316
+   ],
+   "shape_key": "10x316",
+   "elements": 3160
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 799,
+   "numpy_s": 0.03960269992239773,
+   "numpy2x_s": 0.03835849999450147,
+   "speedup": 1.0324360944269095,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    316
+   ],
+   "shape_key": "10x316",
+   "elements": 3160
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2799,
+   "numpy_s": 0.039644100004807115,
+   "numpy2x_s": 0.0388950000051409,
+   "speedup": 1.0192595449175268,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1000
+   ],
+   "shape_key": "10x1000",
+   "elements": 10000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 20455,
+   "numpy_s": 0.044045999995432794,
+   "numpy2x_s": 0.02843810000922531,
+   "speedup": 1.548837650234871,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1000
+   ],
+   "shape_key": "10x1000",
+   "elements": 10000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8530,
+   "numpy_s": 0.039222999941557646,
+   "numpy2x_s": 0.03706809994764626,
+   "speedup": 1.0581335433150039,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1000
+   ],
+   "shape_key": "10x1000",
+   "elements": 10000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 113,
+   "numpy_s": 0.040101699996739626,
+   "numpy2x_s": 0.0338305999757722,
+   "speedup": 1.1853676856295328,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1000
+   ],
+   "shape_key": "10x1000",
+   "elements": 10000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 23657,
+   "numpy_s": 0.038940099999308586,
+   "numpy2x_s": 0.027348399977199733,
+   "speedup": 1.4238529505116502,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1000
+   ],
+   "shape_key": "10x1000",
+   "elements": 10000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2493,
+   "numpy_s": 0.03962450008839369,
+   "numpy2x_s": 0.03742559999227524,
+   "speedup": 1.0587539036534435,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1000
+   ],
+   "shape_key": "10x1000",
+   "elements": 10000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 248,
+   "numpy_s": 0.039184900000691414,
+   "numpy2x_s": 0.0393113000318408,
+   "speedup": 0.996784638741354,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    10,
+    1000
+   ],
+   "shape_key": "10x1000",
+   "elements": 10000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.022063000011257827,
+   "numpy2x_s": 0.04198109998833388,
+   "speedup": 0.5255460199325152,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1
+   ],
+   "shape_key": "32x1",
+   "elements": 32
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021577200037427247,
+   "numpy2x_s": 0.027302199974656105,
+   "speedup": 0.7903099404977173,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1
+   ],
+   "shape_key": "32x1",
+   "elements": 32
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02052180003374815,
+   "numpy2x_s": 0.02719030005391687,
+   "speedup": 0.7547470970549993,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1
+   ],
+   "shape_key": "32x1",
+   "elements": 32
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 54633,
+   "numpy_s": 0.0402921000495553,
+   "numpy2x_s": 0.030564699904061854,
+   "speedup": 1.318256033137127,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1
+   ],
+   "shape_key": "32x1",
+   "elements": 32
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.020364299998618662,
+   "numpy2x_s": 0.037341900053434074,
+   "speedup": 0.5453471829092398,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1
+   ],
+   "shape_key": "32x1",
+   "elements": 32
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 46485,
+   "numpy_s": 0.04025039996486157,
+   "numpy2x_s": 0.05418219999410212,
+   "speedup": 0.7428712745005359,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1
+   ],
+   "shape_key": "32x1",
+   "elements": 32
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 23122,
+   "numpy_s": 0.039633699925616384,
+   "numpy2x_s": 0.04519750003237277,
+   "speedup": 0.8769002687588625,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1
+   ],
+   "shape_key": "32x1",
+   "elements": 32
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02787039999384433,
+   "numpy2x_s": 0.04605160001665354,
+   "speedup": 0.6051993846851276,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    3
+   ],
+   "shape_key": "32x3",
+   "elements": 96
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021281099994666874,
+   "numpy2x_s": 0.027361099957488477,
+   "speedup": 0.7777867128051055,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    3
+   ],
+   "shape_key": "32x3",
+   "elements": 96
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02109220006968826,
+   "numpy2x_s": 0.027699399972334504,
+   "speedup": 0.7614677607007604,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    3
+   ],
+   "shape_key": "32x3",
+   "elements": 96
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 45271,
+   "numpy_s": 0.040266399970278144,
+   "numpy2x_s": 0.03284440003335476,
+   "speedup": 1.2259745932148571,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    3
+   ],
+   "shape_key": "32x3",
+   "elements": 96
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021100100013427436,
+   "numpy2x_s": 0.03743720008060336,
+   "speedup": 0.5636131967133845,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    3
+   ],
+   "shape_key": "32x3",
+   "elements": 96
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 41109,
+   "numpy_s": 0.039209699956700206,
+   "numpy2x_s": 0.05394829995930195,
+   "speedup": 0.7268014003458794,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    3
+   ],
+   "shape_key": "32x3",
+   "elements": 96
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 15613,
+   "numpy_s": 0.037813000031746924,
+   "numpy2x_s": 0.029174000024795532,
+   "speedup": 1.296119832714367,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    3
+   ],
+   "shape_key": "32x3",
+   "elements": 96
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 52790,
+   "numpy_s": 0.03986290004104376,
+   "numpy2x_s": 0.03453170007560402,
+   "speedup": 1.1543856790649623,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    10
+   ],
+   "shape_key": "32x10",
+   "elements": 320
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.024047399987466633,
+   "numpy2x_s": 0.028032899950630963,
+   "speedup": 0.8578277677235235,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    10
+   ],
+   "shape_key": "32x10",
+   "elements": 320
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.028444400057196617,
+   "numpy2x_s": 0.0342780000064522,
+   "speedup": 0.8298150432301326,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    10
+   ],
+   "shape_key": "32x10",
+   "elements": 320
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 37876,
+   "numpy_s": 0.040516399894841015,
+   "numpy2x_s": 0.032796100014820695,
+   "speedup": 1.2354029862249318,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    10
+   ],
+   "shape_key": "32x10",
+   "elements": 320
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.023005499970167875,
+   "numpy2x_s": 0.03842510003596544,
+   "speedup": 0.5987102167238341,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    10
+   ],
+   "shape_key": "32x10",
+   "elements": 320
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 30648,
+   "numpy_s": 0.04036300000734627,
+   "numpy2x_s": 0.04659070004709065,
+   "speedup": 0.8663316920876946,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    10
+   ],
+   "shape_key": "32x10",
+   "elements": 320
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7020,
+   "numpy_s": 0.03868140000849962,
+   "numpy2x_s": 0.03399199992418289,
+   "speedup": 1.1379559924328122,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    10
+   ],
+   "shape_key": "32x10",
+   "elements": 320
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 22884,
+   "numpy_s": 0.03979539999272674,
+   "numpy2x_s": 0.03602249990217388,
+   "speedup": 1.104737319752902,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    32
+   ],
+   "shape_key": "32x32",
+   "elements": 1024
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.032987299957312644,
+   "numpy2x_s": 0.03038050001487136,
+   "speedup": 1.0858050374801351,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    32
+   ],
+   "shape_key": "32x32",
+   "elements": 1024
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 51297,
+   "numpy_s": 0.039821599959395826,
+   "numpy2x_s": 0.03481480001937598,
+   "speedup": 1.1438123998194256,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    32
+   ],
+   "shape_key": "32x32",
+   "elements": 1024
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 17066,
+   "numpy_s": 0.040392099996097386,
+   "numpy2x_s": 0.02882020000834018,
+   "speedup": 1.4015204608020921,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    32
+   ],
+   "shape_key": "32x32",
+   "elements": 1024
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.030672600027173758,
+   "numpy2x_s": 0.042459100019186735,
+   "speedup": 0.7224034426851533,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    32
+   ],
+   "shape_key": "32x32",
+   "elements": 1024
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 16047,
+   "numpy_s": 0.0392338999081403,
+   "numpy2x_s": 0.03014489996712655,
+   "speedup": 1.3015103699440185,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    32
+   ],
+   "shape_key": "32x32",
+   "elements": 1024
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2521,
+   "numpy_s": 0.03945329994894564,
+   "numpy2x_s": 0.03709180001169443,
+   "speedup": 1.0636663612040038,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    32
+   ],
+   "shape_key": "32x32",
+   "elements": 1024
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8303,
+   "numpy_s": 0.039577199961058795,
+   "numpy2x_s": 0.03707140008918941,
+   "speedup": 1.0675938827732625,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    100
+   ],
+   "shape_key": "32x100",
+   "elements": 3200
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 39779,
+   "numpy_s": 0.04069689998868853,
+   "numpy2x_s": 0.0248506999341771,
+   "speedup": 1.6376560860049738,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    100
+   ],
+   "shape_key": "32x100",
+   "elements": 3200
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 22578,
+   "numpy_s": 0.03997090004850179,
+   "numpy2x_s": 0.03459799999836832,
+   "speedup": 1.155295105219575,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    100
+   ],
+   "shape_key": "32x100",
+   "elements": 3200
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 3239,
+   "numpy_s": 0.040376099990680814,
+   "numpy2x_s": 0.037915199995040894,
+   "speedup": 1.0649053676615656,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    100
+   ],
+   "shape_key": "32x100",
+   "elements": 3200
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 48234,
+   "numpy_s": 0.040376000106334686,
+   "numpy2x_s": 0.03274219995364547,
+   "speedup": 1.2331486632998612,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    100
+   ],
+   "shape_key": "32x100",
+   "elements": 3200
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 6862,
+   "numpy_s": 0.04006979998666793,
+   "numpy2x_s": 0.03380770003423095,
+   "speedup": 1.1852270324836203,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    100
+   ],
+   "shape_key": "32x100",
+   "elements": 3200
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 803,
+   "numpy_s": 0.040076499921269715,
+   "numpy2x_s": 0.0384244000306353,
+   "speedup": 1.0429961141700903,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    100
+   ],
+   "shape_key": "32x100",
+   "elements": 3200
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2816,
+   "numpy_s": 0.039237899938598275,
+   "numpy2x_s": 0.03818069992121309,
+   "speedup": 1.0276893828443885,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    316
+   ],
+   "shape_key": "32x316",
+   "elements": 10112
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 21518,
+   "numpy_s": 0.04637539992108941,
+   "numpy2x_s": 0.029505399987101555,
+   "speedup": 1.5717597436863309,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    316
+   ],
+   "shape_key": "32x316",
+   "elements": 10112
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8661,
+   "numpy_s": 0.04008279996924102,
+   "numpy2x_s": 0.03758530004415661,
+   "speedup": 1.0664488489422794,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    316
+   ],
+   "shape_key": "32x316",
+   "elements": 10112
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 3,
+   "numpy_s": 0.0019901000196114182,
+   "numpy2x_s": 0.0012665999820455909,
+   "speedup": 1.5712143121914124,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    316
+   ],
+   "shape_key": "32x316",
+   "elements": 10112
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24265,
+   "numpy_s": 0.03975749993696809,
+   "numpy2x_s": 0.028083399985916913,
+   "speedup": 1.415693967144485,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    316
+   ],
+   "shape_key": "32x316",
+   "elements": 10112
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2521,
+   "numpy_s": 0.04009989998303354,
+   "numpy2x_s": 0.037523900042288005,
+   "speedup": 1.0686495790107766,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    316
+   ],
+   "shape_key": "32x316",
+   "elements": 10112
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 254,
+   "numpy_s": 0.03944650001358241,
+   "numpy2x_s": 0.039139000000432134,
+   "speedup": 1.0078566139438125,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    316
+   ],
+   "shape_key": "32x316",
+   "elements": 10112
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 898,
+   "numpy_s": 0.03883430000860244,
+   "numpy2x_s": 0.0385051000630483,
+   "speedup": 1.0085495153892627,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1000
+   ],
+   "shape_key": "32x1000",
+   "elements": 32000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 7623,
+   "numpy_s": 0.037043999996967614,
+   "numpy2x_s": 0.02916080004069954,
+   "speedup": 1.2703355170388173,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1000
+   ],
+   "shape_key": "32x1000",
+   "elements": 32000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2942,
+   "numpy_s": 0.04004009999334812,
+   "numpy2x_s": 0.03942950000055134,
+   "speedup": 1.0154858669977616,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1000
+   ],
+   "shape_key": "32x1000",
+   "elements": 32000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 108,
+   "numpy_s": 0.04116949997842312,
+   "numpy2x_s": 0.05025950004346669,
+   "speedup": 0.8191386691633994,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1000
+   ],
+   "shape_key": "32x1000",
+   "elements": 32000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 6826,
+   "numpy_s": 0.02795030002016574,
+   "numpy2x_s": 0.02228489995468408,
+   "speedup": 1.2542259591473215,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1000
+   ],
+   "shape_key": "32x1000",
+   "elements": 32000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 837,
+   "numpy_s": 0.04010360001120716,
+   "numpy2x_s": 0.0389073999831453,
+   "speedup": 1.0307447947840271,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1000
+   ],
+   "shape_key": "32x1000",
+   "elements": 32000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 81,
+   "numpy_s": 0.040118100005201995,
+   "numpy2x_s": 0.04019309999421239,
+   "speedup": 0.9981340083491645,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    32,
+    1000
+   ],
+   "shape_key": "32x1000",
+   "elements": 32000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.0280813000863418,
+   "numpy2x_s": 0.0486187000060454,
+   "speedup": 0.577582290000557,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1
+   ],
+   "shape_key": "100x1",
+   "elements": 100
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021094399970024824,
+   "numpy2x_s": 0.028498400002717972,
+   "speedup": 0.7401959397023339,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1
+   ],
+   "shape_key": "100x1",
+   "elements": 100
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.021081199985928833,
+   "numpy2x_s": 0.029723100014962256,
+   "speedup": 0.7092530716956443,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1
+   ],
+   "shape_key": "100x1",
+   "elements": 100
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 26989,
+   "numpy_s": 0.022435600054450333,
+   "numpy2x_s": 0.01813029998447746,
+   "speedup": 1.2374643593133552,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1
+   ],
+   "shape_key": "100x1",
+   "elements": 100
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02106820000335574,
+   "numpy2x_s": 0.03904820000752807,
+   "speedup": 0.5395434360429936,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1
+   ],
+   "shape_key": "100x1",
+   "elements": 100
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 40397,
+   "numpy_s": 0.03885020001325756,
+   "numpy2x_s": 0.052526599960401654,
+   "speedup": 0.7396290649412993,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1
+   ],
+   "shape_key": "100x1",
+   "elements": 100
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 15772,
+   "numpy_s": 0.03979130007792264,
+   "numpy2x_s": 0.030428300029598176,
+   "speedup": 1.3077069714449017,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1
+   ],
+   "shape_key": "100x1",
+   "elements": 100
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 53045,
+   "numpy_s": 0.03867140004877001,
+   "numpy2x_s": 0.03357619990129024,
+   "speedup": 1.1517503518104792,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    3
+   ],
+   "shape_key": "100x3",
+   "elements": 300
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02370719995815307,
+   "numpy2x_s": 0.027859500027261674,
+   "speedup": 0.8509556860300649,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    3
+   ],
+   "shape_key": "100x3",
+   "elements": 300
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.027822399977594614,
+   "numpy2x_s": 0.03241260000504553,
+   "speedup": 0.8583822332445906,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    3
+   ],
+   "shape_key": "100x3",
+   "elements": 300
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 36963,
+   "numpy_s": 0.03853349993005395,
+   "numpy2x_s": 0.03221410000696778,
+   "speedup": 1.1961687559708112,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    3
+   ],
+   "shape_key": "100x3",
+   "elements": 300
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.023001200053840876,
+   "numpy2x_s": 0.038172799977473915,
+   "speedup": 0.6025547003996059,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    3
+   ],
+   "shape_key": "100x3",
+   "elements": 300
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 30734,
+   "numpy_s": 0.04010230000130832,
+   "numpy2x_s": 0.04596619994845241,
+   "speedup": 0.8724301779629379,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    3
+   ],
+   "shape_key": "100x3",
+   "elements": 300
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7577,
+   "numpy_s": 0.04043109994381666,
+   "numpy2x_s": 0.03428369993343949,
+   "speedup": 1.1793097017624152,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    3
+   ],
+   "shape_key": "100x3",
+   "elements": 300
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 23262,
+   "numpy_s": 0.040004200069233775,
+   "numpy2x_s": 0.035826000035740435,
+   "speedup": 1.116624798451547,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    10
+   ],
+   "shape_key": "100x10",
+   "elements": 1000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.033034699968993664,
+   "numpy2x_s": 0.030659299925900996,
+   "speedup": 1.077477308641543,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    10
+   ],
+   "shape_key": "100x10",
+   "elements": 1000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 51566,
+   "numpy_s": 0.03945809998549521,
+   "numpy2x_s": 0.03377760003786534,
+   "speedup": 1.168173580753574,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    10
+   ],
+   "shape_key": "100x10",
+   "elements": 1000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24965,
+   "numpy_s": 0.04030499991495162,
+   "numpy2x_s": 0.033241900033317506,
+   "speedup": 1.212475817403787,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    10
+   ],
+   "shape_key": "100x10",
+   "elements": 1000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02987379999831319,
+   "numpy2x_s": 0.0426167999394238,
+   "speedup": 0.7009864663882855,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    10
+   ],
+   "shape_key": "100x10",
+   "elements": 1000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 16580,
+   "numpy_s": 0.04024040000513196,
+   "numpy2x_s": 0.030989499995484948,
+   "speedup": 1.2985172400650167,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    10
+   ],
+   "shape_key": "100x10",
+   "elements": 1000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2505,
+   "numpy_s": 0.03928339993581176,
+   "numpy2x_s": 0.03683549992274493,
+   "speedup": 1.0664549149109095,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    10
+   ],
+   "shape_key": "100x10",
+   "elements": 1000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8374,
+   "numpy_s": 0.03994840011000633,
+   "numpy2x_s": 0.037673500017262995,
+   "speedup": 1.0603846229232994,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    32
+   ],
+   "shape_key": "100x32",
+   "elements": 3200
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 38963,
+   "numpy_s": 0.03879730007611215,
+   "numpy2x_s": 0.021400799974799156,
+   "speedup": 1.812890178021313,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    32
+   ],
+   "shape_key": "100x32",
+   "elements": 3200
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 22401,
+   "numpy_s": 0.039787599933333695,
+   "numpy2x_s": 0.03404450009111315,
+   "speedup": 1.1686939102307365,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    32
+   ],
+   "shape_key": "100x32",
+   "elements": 3200
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8112,
+   "numpy_s": 0.04009489994496107,
+   "numpy2x_s": 0.03434050001669675,
+   "speedup": 1.1675689033492949,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    32
+   ],
+   "shape_key": "100x32",
+   "elements": 3200
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 47957,
+   "numpy_s": 0.04088619991671294,
+   "numpy2x_s": 0.03319370001554489,
+   "speedup": 1.231745779999385,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    32
+   ],
+   "shape_key": "100x32",
+   "elements": 3200
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 6738,
+   "numpy_s": 0.039464800036512315,
+   "numpy2x_s": 0.033154800068587065,
+   "speedup": 1.1903193490798256,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    32
+   ],
+   "shape_key": "100x32",
+   "elements": 3200
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 801,
+   "numpy_s": 0.039923899923451245,
+   "numpy2x_s": 0.03867569996509701,
+   "speedup": 1.0322734936789941,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    32
+   ],
+   "shape_key": "100x32",
+   "elements": 3200
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2841,
+   "numpy_s": 0.039753700024448335,
+   "numpy2x_s": 0.038824900053441525,
+   "speedup": 1.0239227910368949,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    100
+   ],
+   "shape_key": "100x100",
+   "elements": 10000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 19029,
+   "numpy_s": 0.038085300009697676,
+   "numpy2x_s": 0.026742000016383827,
+   "speedup": 1.4241754538315845,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    100
+   ],
+   "shape_key": "100x100",
+   "elements": 10000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8756,
+   "numpy_s": 0.04005090007558465,
+   "numpy2x_s": 0.03767099999822676,
+   "speedup": 1.0631759198712514,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    100
+   ],
+   "shape_key": "100x100",
+   "elements": 10000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1275,
+   "numpy_s": 0.03940180002246052,
+   "numpy2x_s": 0.0359483000356704,
+   "speedup": 1.0960685201626592,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    100
+   ],
+   "shape_key": "100x100",
+   "elements": 10000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 23946,
+   "numpy_s": 0.03861319995485246,
+   "numpy2x_s": 0.027462400030344725,
+   "speedup": 1.406038798946436,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    100
+   ],
+   "shape_key": "100x100",
+   "elements": 10000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2518,
+   "numpy_s": 0.039426299976184964,
+   "numpy2x_s": 0.03718250000383705,
+   "speedup": 1.060345591934818,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    100
+   ],
+   "shape_key": "100x100",
+   "elements": 10000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 258,
+   "numpy_s": 0.04000050004106015,
+   "numpy2x_s": 0.039802700048312545,
+   "speedup": 1.004969511930284,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    100
+   ],
+   "shape_key": "100x100",
+   "elements": 10000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 893,
+   "numpy_s": 0.03891909995581955,
+   "numpy2x_s": 0.03841070004273206,
+   "speedup": 1.0132358929288425,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    316
+   ],
+   "shape_key": "100x316",
+   "elements": 31600
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 7041,
+   "numpy_s": 0.039552100002765656,
+   "numpy2x_s": 0.026878300006501377,
+   "speedup": 1.4715253566333701,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    316
+   ],
+   "shape_key": "100x316",
+   "elements": 31600
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2980,
+   "numpy_s": 0.040109299938194454,
+   "numpy2x_s": 0.03941079997457564,
+   "speedup": 1.0177235672472882,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    316
+   ],
+   "shape_key": "100x316",
+   "elements": 31600
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 5,
+   "numpy_s": 0.0029846999095752835,
+   "numpy2x_s": 0.0010049000848084688,
+   "speedup": 2.970145942563194,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    316
+   ],
+   "shape_key": "100x316",
+   "elements": 31600
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 9709,
+   "numpy_s": 0.039359600050374866,
+   "numpy2x_s": 0.031137699959799647,
+   "speedup": 1.2640496922120166,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    316
+   ],
+   "shape_key": "100x316",
+   "elements": 31600
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 850,
+   "numpy_s": 0.04019590001553297,
+   "numpy2x_s": 0.03898129996377975,
+   "speedup": 1.0311585312157827,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    316
+   ],
+   "shape_key": "100x316",
+   "elements": 31600
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 83,
+   "numpy_s": 0.04056019999552518,
+   "numpy2x_s": 0.04090429993811995,
+   "speedup": 0.9915876828813762,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    316
+   ],
+   "shape_key": "100x316",
+   "elements": 31600
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 244,
+   "numpy_s": 0.034800700028426945,
+   "numpy2x_s": 0.03443719993811101,
+   "speedup": 1.0105554484966608,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1000
+   ],
+   "shape_key": "100x1000",
+   "elements": 100000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1098,
+   "numpy_s": 0.04436960001476109,
+   "numpy2x_s": 0.02331200009211898,
+   "speedup": 1.9032944337436322,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1000
+   ],
+   "shape_key": "100x1000",
+   "elements": 100000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 949,
+   "numpy_s": 0.04082920006476343,
+   "numpy2x_s": 0.03967910003848374,
+   "speedup": 1.028985033056804,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1000
+   ],
+   "shape_key": "100x1000",
+   "elements": 100000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 50,
+   "numpy_s": 0.04307750007137656,
+   "numpy2x_s": 0.03871899994555861,
+   "speedup": 1.1125674767412972,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1000
+   ],
+   "shape_key": "100x1000",
+   "elements": 100000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1559,
+   "numpy_s": 0.03710379998665303,
+   "numpy2x_s": 0.015351499896496534,
+   "speedup": 2.4169494991900256,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1000
+   ],
+   "shape_key": "100x1000",
+   "elements": 100000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 169,
+   "numpy_s": 0.06942330009769648,
+   "numpy2x_s": 0.024560100049711764,
+   "speedup": 2.8266700851046096,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1000
+   ],
+   "shape_key": "100x1000",
+   "elements": 100000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 24,
+   "numpy_s": 0.04304840008262545,
+   "numpy2x_s": 0.03693090006709099,
+   "speedup": 1.1656471952869014,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    100,
+    1000
+   ],
+   "shape_key": "100x1000",
+   "elements": 100000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 53598,
+   "numpy_s": 0.0401372000342235,
+   "numpy2x_s": 0.034825699985958636,
+   "speedup": 1.1525166773505315,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1
+   ],
+   "shape_key": "316x1",
+   "elements": 316
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.024130399920977652,
+   "numpy2x_s": 0.02934000000823289,
+   "speedup": 0.8224403515407835,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1
+   ],
+   "shape_key": "316x1",
+   "elements": 316
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02848380000796169,
+   "numpy2x_s": 0.035558000090532005,
+   "speedup": 0.8010518008729643,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1
+   ],
+   "shape_key": "316x1",
+   "elements": 316
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 37254,
+   "numpy_s": 0.039630700019188225,
+   "numpy2x_s": 0.03270330000668764,
+   "speedup": 1.211825718232838,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1
+   ],
+   "shape_key": "316x1",
+   "elements": 316
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.02308499999344349,
+   "numpy2x_s": 0.039552300004288554,
+   "speedup": 0.5836575873195855,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1
+   ],
+   "shape_key": "316x1",
+   "elements": 316
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 30277,
+   "numpy_s": 0.04046059993561357,
+   "numpy2x_s": 0.04564689996186644,
+   "speedup": 0.8863822071030998,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1
+   ],
+   "shape_key": "316x1",
+   "elements": 316
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7193,
+   "numpy_s": 0.039512200048193336,
+   "numpy2x_s": 0.03386270010378212,
+   "speedup": 1.1668354834994457,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1
+   ],
+   "shape_key": "316x1",
+   "elements": 316
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24393,
+   "numpy_s": 0.039984700037166476,
+   "numpy2x_s": 0.03598280006553978,
+   "speedup": 1.1112170249212836,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    3
+   ],
+   "shape_key": "316x3",
+   "elements": 948
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.030559300095774233,
+   "numpy2x_s": 0.030293400050140917,
+   "speedup": 1.0087774909780085,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    3
+   ],
+   "shape_key": "316x3",
+   "elements": 948
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 53640,
+   "numpy_s": 0.04007719992659986,
+   "numpy2x_s": 0.034938500029966235,
+   "speedup": 1.147078434741796,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    3
+   ],
+   "shape_key": "316x3",
+   "elements": 948
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24945,
+   "numpy_s": 0.04026430007070303,
+   "numpy2x_s": 0.03306080005131662,
+   "speedup": 1.2178864397777796,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    3
+   ],
+   "shape_key": "316x3",
+   "elements": 948
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.029723000014200807,
+   "numpy2x_s": 0.04133260005619377,
+   "speedup": 0.7191175966135902,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    3
+   ],
+   "shape_key": "316x3",
+   "elements": 948
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 17128,
+   "numpy_s": 0.040195300010964274,
+   "numpy2x_s": 0.030477000051178038,
+   "speedup": 1.3188732468243898,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    3
+   ],
+   "shape_key": "316x3",
+   "elements": 948
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2609,
+   "numpy_s": 0.038142999983392656,
+   "numpy2x_s": 0.035889700055122375,
+   "speedup": 1.0627840278634113,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    3
+   ],
+   "shape_key": "316x3",
+   "elements": 948
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8262,
+   "numpy_s": 0.03864589997101575,
+   "numpy2x_s": 0.036597999976947904,
+   "speedup": 1.0559566095239565,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    10
+   ],
+   "shape_key": "316x10",
+   "elements": 3160
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 38893,
+   "numpy_s": 0.03984139999374747,
+   "numpy2x_s": 0.021137000061571598,
+   "speedup": 1.8849127065189186,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    10
+   ],
+   "shape_key": "316x10",
+   "elements": 3160
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 22650,
+   "numpy_s": 0.039696100051514804,
+   "numpy2x_s": 0.034034600015729666,
+   "speedup": 1.1663454259244586,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    10
+   ],
+   "shape_key": "316x10",
+   "elements": 3160
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 12930,
+   "numpy_s": 0.04072480008471757,
+   "numpy2x_s": 0.03101470007095486,
+   "speedup": 1.3130805711984357,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    10
+   ],
+   "shape_key": "316x10",
+   "elements": 3160
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 46017,
+   "numpy_s": 0.04131110000889748,
+   "numpy2x_s": 0.03140969993546605,
+   "speedup": 1.3152338320256072,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    10
+   ],
+   "shape_key": "316x10",
+   "elements": 3160
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 6899,
+   "numpy_s": 0.03985529998317361,
+   "numpy2x_s": 0.03349459997843951,
+   "speedup": 1.1899022531640469,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    10
+   ],
+   "shape_key": "316x10",
+   "elements": 3160
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 807,
+   "numpy_s": 0.03978880005888641,
+   "numpy2x_s": 0.038158099981956184,
+   "speedup": 1.042735358356452,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    10
+   ],
+   "shape_key": "316x10",
+   "elements": 3160
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2822,
+   "numpy_s": 0.03927850001491606,
+   "numpy2x_s": 0.038736999966204166,
+   "speedup": 1.0139788845079465,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    32
+   ],
+   "shape_key": "316x32",
+   "elements": 10112
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 19013,
+   "numpy_s": 0.03882879996672273,
+   "numpy2x_s": 0.026484800036996603,
+   "speedup": 1.4660786531324683,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    32
+   ],
+   "shape_key": "316x32",
+   "elements": 10112
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8540,
+   "numpy_s": 0.0394094999646768,
+   "numpy2x_s": 0.0372019000351429,
+   "speedup": 1.059341053210951,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    32
+   ],
+   "shape_key": "316x32",
+   "elements": 10112
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 3193,
+   "numpy_s": 0.040008700103498995,
+   "numpy2x_s": 0.0380072999978438,
+   "speedup": 1.0526583078979233,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    32
+   ],
+   "shape_key": "316x32",
+   "elements": 10112
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24436,
+   "numpy_s": 0.040156599949114025,
+   "numpy2x_s": 0.02810170000884682,
+   "speedup": 1.4289740455727642,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    32
+   ],
+   "shape_key": "316x32",
+   "elements": 10112
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2486,
+   "numpy_s": 0.03957919997628778,
+   "numpy2x_s": 0.036595200072042644,
+   "speedup": 1.081540745736346,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    32
+   ],
+   "shape_key": "316x32",
+   "elements": 10112
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 249,
+   "numpy_s": 0.03880009998101741,
+   "numpy2x_s": 0.039033600012771785,
+   "speedup": 0.9940179734465185,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    32
+   ],
+   "shape_key": "316x32",
+   "elements": 10112
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 893,
+   "numpy_s": 0.038672400056384504,
+   "numpy2x_s": 0.038132900022901595,
+   "speedup": 1.0141478889137439,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    100
+   ],
+   "shape_key": "316x100",
+   "elements": 31600
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 7160,
+   "numpy_s": 0.03958420001436025,
+   "numpy2x_s": 0.02733239997178316,
+   "speedup": 1.4482518935485116,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    100
+   ],
+   "shape_key": "316x100",
+   "elements": 31600
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2974,
+   "numpy_s": 0.039667800068855286,
+   "numpy2x_s": 0.03916949999984354,
+   "speedup": 1.0127216346650771,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    100
+   ],
+   "shape_key": "316x100",
+   "elements": 31600
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 547,
+   "numpy_s": 0.03667159995529801,
+   "numpy2x_s": 0.036399099975824356,
+   "speedup": 1.0074864482818158,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    100
+   ],
+   "shape_key": "316x100",
+   "elements": 31600
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 9602,
+   "numpy_s": 0.03914600005373359,
+   "numpy2x_s": 0.03093449992593378,
+   "speedup": 1.2654479673975831,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    100
+   ],
+   "shape_key": "316x100",
+   "elements": 31600
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 842,
+   "numpy_s": 0.03932670003268868,
+   "numpy2x_s": 0.0382178999716416,
+   "speedup": 1.0290125847278324,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    100
+   ],
+   "shape_key": "316x100",
+   "elements": 31600
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 82,
+   "numpy_s": 0.039738799910992384,
+   "numpy2x_s": 0.04023620008956641,
+   "speedup": 0.9876379932134047,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    100
+   ],
+   "shape_key": "316x100",
+   "elements": 31600
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 241,
+   "numpy_s": 0.03456870000809431,
+   "numpy2x_s": 0.03473129996564239,
+   "speedup": 0.9953183451898163,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    316
+   ],
+   "shape_key": "316x316",
+   "elements": 99856
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1076,
+   "numpy_s": 0.046653199940919876,
+   "numpy2x_s": 0.024851999944075942,
+   "speedup": 1.8772412701554333,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    316
+   ],
+   "shape_key": "316x316",
+   "elements": 99856
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 915,
+   "numpy_s": 0.039026300073601305,
+   "numpy2x_s": 0.03766989998985082,
+   "speedup": 1.0360075307902579,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    316
+   ],
+   "shape_key": "316x316",
+   "elements": 99856
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 94,
+   "numpy_s": 0.030914400005713105,
+   "numpy2x_s": 0.028404399985447526,
+   "speedup": 1.0883665918502603,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    316
+   ],
+   "shape_key": "316x316",
+   "elements": 99856
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1539,
+   "numpy_s": 0.037124999915249646,
+   "numpy2x_s": 0.01541589992120862,
+   "speedup": 2.4082278754401134,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    316
+   ],
+   "shape_key": "316x316",
+   "elements": 99856
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 128,
+   "numpy_s": 0.052618400077335536,
+   "numpy2x_s": 0.018183100037276745,
+   "speedup": 2.893807984857576,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    316
+   ],
+   "shape_key": "316x316",
+   "elements": 99856
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 22,
+   "numpy_s": 0.03903889993671328,
+   "numpy2x_s": 0.034215499996207654,
+   "speedup": 1.140971195541209,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    316
+   ],
+   "shape_key": "316x316",
+   "elements": 99856
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 29,
+   "numpy_s": 0.025365700013935566,
+   "numpy2x_s": 0.018406299990601838,
+   "speedup": 1.3780988045879488,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1000
+   ],
+   "shape_key": "316x1000",
+   "elements": 316000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 83,
+   "numpy_s": 0.04066860000602901,
+   "numpy2x_s": 0.007696700049564242,
+   "speedup": 5.283900859347053,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1000
+   ],
+   "shape_key": "316x1000",
+   "elements": 316000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 82,
+   "numpy_s": 0.03924610000103712,
+   "numpy2x_s": 0.010780000011436641,
+   "speedup": 3.6406400704453086,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1000
+   ],
+   "shape_key": "316x1000",
+   "elements": 316000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 15,
+   "numpy_s": 0.03748299996368587,
+   "numpy2x_s": 0.024295100010931492,
+   "speedup": 1.5428213897790308,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1000
+   ],
+   "shape_key": "316x1000",
+   "elements": 316000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65,
+   "numpy_s": 0.028444499941542745,
+   "numpy2x_s": 0.004885199945420027,
+   "speedup": 5.822586641148646,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1000
+   ],
+   "shape_key": "316x1000",
+   "elements": 316000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 35,
+   "numpy_s": 0.04021769994869828,
+   "numpy2x_s": 0.01779389998409897,
+   "speedup": 2.260195908970924,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1000
+   ],
+   "shape_key": "316x1000",
+   "elements": 316000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7,
+   "numpy_s": 0.04094540001824498,
+   "numpy2x_s": 0.03435430000536144,
+   "speedup": 1.191856623824526,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    316,
+    1000
+   ],
+   "shape_key": "316x1000",
+   "elements": 316000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 23032,
+   "numpy_s": 0.03933639999013394,
+   "numpy2x_s": 0.035726599977351725,
+   "speedup": 1.1010395619810054,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1
+   ],
+   "shape_key": "1000x1",
+   "elements": 1000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.03338639996945858,
+   "numpy2x_s": 0.03201920003630221,
+   "speedup": 1.042699378235755,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1
+   ],
+   "shape_key": "1000x1",
+   "elements": 1000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 51293,
+   "numpy_s": 0.03934569994453341,
+   "numpy2x_s": 0.03388580004684627,
+   "speedup": 1.161126486319903,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1
+   ],
+   "shape_key": "1000x1",
+   "elements": 1000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 20129,
+   "numpy_s": 0.0393235000083223,
+   "numpy2x_s": 0.03319109999574721,
+   "speedup": 1.1847603729120408,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1
+   ],
+   "shape_key": "1000x1",
+   "elements": 1000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 65536,
+   "numpy_s": 0.030093300039879978,
+   "numpy2x_s": 0.04449110000859946,
+   "speedup": 0.6763892111919776,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1
+   ],
+   "shape_key": "1000x1",
+   "elements": 1000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 15947,
+   "numpy_s": 0.03905089991167188,
+   "numpy2x_s": 0.029514499939978123,
+   "speedup": 1.3231089800297264,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1
+   ],
+   "shape_key": "1000x1",
+   "elements": 1000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2579,
+   "numpy_s": 0.039191999938338995,
+   "numpy2x_s": 0.03684220009017736,
+   "speedup": 1.0637801174308297,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1
+   ],
+   "shape_key": "1000x1",
+   "elements": 1000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8807,
+   "numpy_s": 0.03995270002633333,
+   "numpy2x_s": 0.03722389996983111,
+   "speedup": 1.0733077420343875,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    3
+   ],
+   "shape_key": "1000x3",
+   "elements": 3000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 40203,
+   "numpy_s": 0.039094300009310246,
+   "numpy2x_s": 0.02049189992249012,
+   "speedup": 1.907792842888314,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    3
+   ],
+   "shape_key": "1000x3",
+   "elements": 3000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 23515,
+   "numpy_s": 0.039862100034952164,
+   "numpy2x_s": 0.033996100071817636,
+   "speedup": 1.1725492027245024,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    3
+   ],
+   "shape_key": "1000x3",
+   "elements": 3000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 12091,
+   "numpy_s": 0.03929959994275123,
+   "numpy2x_s": 0.030166000011377037,
+   "speedup": 1.3027779595547795,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    3
+   ],
+   "shape_key": "1000x3",
+   "elements": 3000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 47371,
+   "numpy_s": 0.03969120001420379,
+   "numpy2x_s": 0.03368570003658533,
+   "speedup": 1.1782803970556055,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    3
+   ],
+   "shape_key": "1000x3",
+   "elements": 3000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 7128,
+   "numpy_s": 0.03984950005542487,
+   "numpy2x_s": 0.03385929996147752,
+   "speedup": 1.176914469606948,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    3
+   ],
+   "shape_key": "1000x3",
+   "elements": 3000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 849,
+   "numpy_s": 0.04041079990565777,
+   "numpy2x_s": 0.0391366999829188,
+   "speedup": 1.0325551189368305,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    3
+   ],
+   "shape_key": "1000x3",
+   "elements": 3000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2799,
+   "numpy_s": 0.03922119992785156,
+   "numpy2x_s": 0.03901800001040101,
+   "speedup": 1.0052078506688293,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    10
+   ],
+   "shape_key": "1000x10",
+   "elements": 10000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 18697,
+   "numpy_s": 0.037842300022020936,
+   "numpy2x_s": 0.02664219995494932,
+   "speedup": 1.4203894605554515,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    10
+   ],
+   "shape_key": "1000x10",
+   "elements": 10000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 8694,
+   "numpy_s": 0.03983319993130863,
+   "numpy2x_s": 0.03783759998623282,
+   "speedup": 1.0527411872265129,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    10
+   ],
+   "shape_key": "1000x10",
+   "elements": 10000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 5411,
+   "numpy_s": 0.039095900021493435,
+   "numpy2x_s": 0.03685220004990697,
+   "speedup": 1.0608837455714433,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    10
+   ],
+   "shape_key": "1000x10",
+   "elements": 10000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24012,
+   "numpy_s": 0.03966559993568808,
+   "numpy2x_s": 0.028182299924083054,
+   "speedup": 1.4074649706567073,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    10
+   ],
+   "shape_key": "1000x10",
+   "elements": 10000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2524,
+   "numpy_s": 0.04010109999217093,
+   "numpy2x_s": 0.037929999991320074,
+   "speedup": 1.0572396520260399,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    10
+   ],
+   "shape_key": "1000x10",
+   "elements": 10000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 255,
+   "numpy_s": 0.03957070002797991,
+   "numpy2x_s": 0.039763899985700846,
+   "speedup": 0.9951413227125506,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    10
+   ],
+   "shape_key": "1000x10",
+   "elements": 10000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 874,
+   "numpy_s": 0.038017299957573414,
+   "numpy2x_s": 0.038048500078730285,
+   "speedup": 0.9991799907725059,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    32
+   ],
+   "shape_key": "1000x32",
+   "elements": 32000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 7070,
+   "numpy_s": 0.04033510002773255,
+   "numpy2x_s": 0.027500299969688058,
+   "speedup": 1.4667149111897517,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    32
+   ],
+   "shape_key": "1000x32",
+   "elements": 32000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 2991,
+   "numpy_s": 0.040107900043949485,
+   "numpy2x_s": 0.039269500062800944,
+   "speedup": 1.0213499020819656,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    32
+   ],
+   "shape_key": "1000x32",
+   "elements": 32000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1342,
+   "numpy_s": 0.04155880003236234,
+   "numpy2x_s": 0.03852170007303357,
+   "speedup": 1.0788412752700611,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    32
+   ],
+   "shape_key": "1000x32",
+   "elements": 32000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 9558,
+   "numpy_s": 0.03916189994197339,
+   "numpy2x_s": 0.031108399969525635,
+   "speedup": 1.258885059351722,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    32
+   ],
+   "shape_key": "1000x32",
+   "elements": 32000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 835,
+   "numpy_s": 0.039407300064340234,
+   "numpy2x_s": 0.03864320006687194,
+   "speedup": 1.019773207088078,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    32
+   ],
+   "shape_key": "1000x32",
+   "elements": 32000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 81,
+   "numpy_s": 0.03959780000150204,
+   "numpy2x_s": 0.039815800031647086,
+   "speedup": 0.9945247858897278,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    32
+   ],
+   "shape_key": "1000x32",
+   "elements": 32000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 246,
+   "numpy_s": 0.03483959997538477,
+   "numpy2x_s": 0.034531099954620004,
+   "speedup": 1.008933976072879,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    100
+   ],
+   "shape_key": "1000x100",
+   "elements": 100000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1099,
+   "numpy_s": 0.042480000061914325,
+   "numpy2x_s": 0.023804600001312792,
+   "speedup": 1.7845290431081224,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    100
+   ],
+   "shape_key": "1000x100",
+   "elements": 100000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 937,
+   "numpy_s": 0.03923909994773567,
+   "numpy2x_s": 0.03824160003568977,
+   "speedup": 1.0260841573342894,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    100
+   ],
+   "shape_key": "1000x100",
+   "elements": 100000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 303,
+   "numpy_s": 0.03517899999860674,
+   "numpy2x_s": 0.03714210004545748,
+   "speedup": 0.9471462290918353,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    100
+   ],
+   "shape_key": "1000x100",
+   "elements": 100000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 1502,
+   "numpy_s": 0.03666520002298057,
+   "numpy2x_s": 0.014752999995835125,
+   "speedup": 2.485270794640508,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    100
+   ],
+   "shape_key": "1000x100",
+   "elements": 100000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 142,
+   "numpy_s": 0.03969120001420379,
+   "numpy2x_s": 0.020518300007097423,
+   "speedup": 1.9344292656055484,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    100
+   ],
+   "shape_key": "1000x100",
+   "elements": 100000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 22,
+   "numpy_s": 0.039091199985705316,
+   "numpy2x_s": 0.0336401000386104,
+   "speedup": 1.1620417282005233,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    100
+   ],
+   "shape_key": "1000x100",
+   "elements": 100000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 30,
+   "numpy_s": 0.025816600071266294,
+   "numpy2x_s": 0.01803999999538064,
+   "speedup": 1.4310753923435113,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    316
+   ],
+   "shape_key": "1000x316",
+   "elements": 316000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 82,
+   "numpy_s": 0.040633599972352386,
+   "numpy2x_s": 0.007737100007943809,
+   "speedup": 5.25178683623492,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    316
+   ],
+   "shape_key": "1000x316",
+   "elements": 316000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 83,
+   "numpy_s": 0.03843139996752143,
+   "numpy2x_s": 0.010825100005604327,
+   "speedup": 3.550212002441075,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    316
+   ],
+   "shape_key": "1000x316",
+   "elements": 316000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 40,
+   "numpy_s": 0.036882500047795475,
+   "numpy2x_s": 0.02405499992892146,
+   "speedup": 1.5332571256195033,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    316
+   ],
+   "shape_key": "1000x316",
+   "elements": 316000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 83,
+   "numpy_s": 0.03780789999291301,
+   "numpy2x_s": 0.006301500019617379,
+   "speedup": 5.999825418584807,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    316
+   ],
+   "shape_key": "1000x316",
+   "elements": 316000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 33,
+   "numpy_s": 0.037910399958491325,
+   "numpy2x_s": 0.01651969994418323,
+   "speedup": 2.294860081392701,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    316
+   ],
+   "shape_key": "1000x316",
+   "elements": 316000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 6,
+   "numpy_s": 0.035212400020100176,
+   "numpy2x_s": 0.02939339994918555,
+   "speedup": 1.1979696149807215,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    316
+   ],
+   "shape_key": "1000x316",
+   "elements": 316000
+  },
+  {
+   "case": "op_cos",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 9,
+   "numpy_s": 0.03607959998771548,
+   "numpy2x_s": 0.02893130003940314,
+   "speedup": 1.2470784215910338,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1000
+   ],
+   "shape_key": "1000x1000",
+   "elements": 1000000
+  },
+  {
+   "case": "op_sub",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 23,
+   "numpy_s": 0.03845499991439283,
+   "numpy2x_s": 0.007165599963627756,
+   "speedup": 5.366612720440519,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1000
+   ],
+   "shape_key": "1000x1000",
+   "elements": 1000000
+  },
+  {
+   "case": "op_div",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 24,
+   "numpy_s": 0.041289899963885546,
+   "numpy2x_s": 0.01008090004324913,
+   "speedup": 4.09585451564279,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1000
+   ],
+   "shape_key": "1000x1000",
+   "elements": 1000000
+  },
+  {
+   "case": "op_matmul",
+   "group": "single",
+   "complexity": "single",
+   "width": 1,
+   "reps": 6,
+   "numpy_s": 0.035428499919362366,
+   "numpy2x_s": 0.028524600085802376,
+   "speedup": 1.2420331858393445,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1000
+   ],
+   "shape_key": "1000x1000",
+   "elements": 1000000
+  },
+  {
+   "case": "dep1_abs",
+   "group": "dependent",
+   "complexity": "single",
+   "width": 1,
+   "reps": 15,
+   "numpy_s": 0.02096739993430674,
+   "numpy2x_s": 0.003625399898737669,
+   "speedup": 5.783472312008228,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1000
+   ],
+   "shape_key": "1000x1000",
+   "elements": 1000000
+  },
+  {
+   "case": "dep2_abs_pow",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 11,
+   "numpy_s": 0.03967610001564026,
+   "numpy2x_s": 0.01757630007341504,
+   "speedup": 2.25736360041168,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1000
+   ],
+   "shape_key": "1000x1000",
+   "elements": 1000000
+  },
+  {
+   "case": "dep3_cos_pow_neg",
+   "group": "dependent",
+   "complexity": "unary",
+   "width": 1,
+   "reps": 2,
+   "numpy_s": 0.03886869992129505,
+   "numpy2x_s": 0.03340129996649921,
+   "speedup": 1.1636882384901044,
+   "identical": true,
+   "fallbacks": 0,
+   "shape": [
+    1000,
+    1000
+   ],
+   "shape_key": "1000x1000",
+   "elements": 1000000
+  }
+ ],
+ "skipped": [],
+ "points": [
+  {
+   "shape": [],
+   "elements": 1,
+   "cases": 6,
+   "median": 1.0227568330125318,
+   "q25": 1.0004805423067082,
+   "q75": 1.2597772262912355,
+   "spread": 1.2591721408061498,
+   "groups": {
+    "single": 1.3468880600869897,
+    "dependent": 0.9957648007079434
+   },
+   "classes": {
+    "single": [
+     1.0195466823513173,
+     1.1783003405491166,
+     1.347196367808786,
+     4
+    ],
+    "unary": [
+     1.0004805423067082,
+     1.0052186167081694,
+     1.009979129675984,
+     2
+    ]
+   },
+   "identical": 6,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1,
+    1
+   ],
+   "elements": 1,
+   "cases": 7,
+   "median": 0.804030055150847,
+   "q25": 0.6816988522388143,
+   "q75": 0.8498038653255576,
+   "spread": 1.2465971778222276,
+   "groups": {
+    "single": 0.8064079801966442,
+    "dependent": 0.804030055150847
+   },
+   "classes": {
+    "single": [
+     0.586716833491771,
+     0.7920572559304875,
+     0.8210187150686268,
+     5
+    ],
+    "unary": [
+     0.8222905500461677,
+     0.8409657628636429,
+     0.8600651123488184,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1,
+    3
+   ],
+   "elements": 3,
+   "cases": 7,
+   "median": 0.8035928569590691,
+   "q25": 0.6806776357930456,
+   "q75": 0.8540728123557851,
+   "spread": 1.2547390533269391,
+   "groups": {
+    "single": 0.8075840327171496,
+    "dependent": 0.7884770765551669
+   },
+   "classes": {
+    "single": [
+     0.5876163780094287,
+     0.8035928569590691,
+     0.8115950313044077,
+     5
+    ],
+    "unary": [
+     0.814712552023049,
+     0.8418209763609643,
+     0.8698313957255424,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1,
+    10
+   ],
+   "elements": 10,
+   "cases": 7,
+   "median": 0.8158108054053405,
+   "q25": 0.6850875224236856,
+   "q75": 0.852879661325949,
+   "spread": 1.24492073408176,
+   "groups": {
+    "single": 0.8249369808592267,
+    "dependent": 0.7928807230425104
+   },
+   "classes": {
+    "single": [
+     0.5919489523967906,
+     0.8158108054053405,
+     0.834165247481633,
+     5
+    ],
+    "unary": [
+     0.8119639547601673,
+     0.8315064859943924,
+     0.8515193712693377,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1,
+    32
+   ],
+   "elements": 32,
+   "cases": 7,
+   "median": 0.7463600686868115,
+   "q25": 0.6338295253847664,
+   "q75": 0.8214212830160827,
+   "spread": 1.2959656344778805,
+   "groups": {
+    "single": 0.7583669516167805,
+    "dependent": 0.7372872607751497
+   },
+   "classes": {
+    "single": [
+     0.5448892021097823,
+     0.7463600686868115,
+     0.7705669923049714,
+     5
+    ],
+    "unary": [
+     0.7696759610903023,
+     0.8034874825552493,
+     0.838784329068097,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1,
+    100
+   ],
+   "elements": 100,
+   "cases": 7,
+   "median": 0.7377798781156191,
+   "q25": 0.6529751777676728,
+   "q75": 0.9182310290550114,
+   "spread": 1.4062265463048216,
+   "groups": {
+    "single": 0.7294791258438869,
+    "dependent": 0.741794441031925
+   },
+   "classes": {
+    "single": [
+     0.5911455339484832,
+     0.7212717652331643,
+     0.7377798781156191,
+     5
+    ],
+    "unary": [
+     0.8577626095275559,
+     0.9918606201469998,
+     1.1469227952711158,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1,
+    316
+   ],
+   "elements": 316,
+   "cases": 7,
+   "median": 0.9001279395956905,
+   "q25": 0.8055471862724473,
+   "q75": 1.158639471040701,
+   "spread": 1.4383260109220133,
+   "groups": {
+    "single": 0.9644630103550489,
+    "dependent": 0.9001279395956905
+   },
+   "classes": {
+    "single": [
+     0.8018819066236853,
+     0.8092292193543427,
+     1.149475174766045,
+     5
+    ],
+    "unary": [
+     0.960677108668777,
+     1.0252992563865304,
+     1.0942683609933075,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1,
+    1000
+   ],
+   "elements": 1000,
+   "cases": 7,
+   "median": 1.0596518390667107,
+   "q25": 0.9959700004171483,
+   "q75": 1.1134649809211767,
+   "spread": 1.1179704011715386,
+   "groups": {
+    "single": 1.0688488300082475,
+    "dependent": 1.0416248643131563
+   },
+   "classes": {
+    "single": [
+     0.9523162087581567,
+     1.0596518390667107,
+     1.0781256440003941,
+     5
+    ],
+    "unary": [
+     1.102193842126712,
+     1.1662848183094194,
+     1.2341025919673574,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    3,
+    1
+   ],
+   "elements": 3,
+   "cases": 7,
+   "median": 0.7915056148920334,
+   "q25": 0.6769315601499725,
+   "q75": 0.8761784454468728,
+   "spread": 1.2943383009838656,
+   "groups": {
+    "single": 0.8172329407718179,
+    "dependent": 0.776928416439866
+   },
+   "classes": {
+    "single": [
+     0.5898050932759815,
+     0.7915056148920334,
+     0.8437965150426069,
+     5
+    ],
+    "unary": [
+     0.8082069957818863,
+     0.8407448282352011,
+     0.8745926104245186,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    3,
+    3
+   ],
+   "elements": 9,
+   "cases": 7,
+   "median": 0.8566353214991101,
+   "q25": 0.6892276113350836,
+   "q75": 0.9012961739935781,
+   "spread": 1.307690172550839,
+   "groups": {
+    "single": 0.8785201857809481,
+    "dependent": 0.7796429045811685
+   },
+   "classes": {
+    "single": [
+     0.609297791893403,
+     0.8566353214991101,
+     0.900964152953613,
+     5
+    ],
+    "unary": [
+     0.8084975047177739,
+     0.838420014206406,
+     0.869449956394425,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    3,
+    10
+   ],
+   "elements": 30,
+   "cases": 7,
+   "median": 0.7973123647818718,
+   "q25": 0.6536622267863395,
+   "q75": 0.8503699529954025,
+   "spread": 1.300931762840505,
+   "groups": {
+    "single": 0.812349439663022,
+    "dependent": 0.7449673482555476
+   },
+   "classes": {
+    "single": [
+     0.5735476967249672,
+     0.7973123647818718,
+     0.8276701093195311,
+     5
+    ],
+    "unary": [
+     0.77525140857785,
+     0.8067665621980701,
+     0.8395628549387311,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    3,
+    32
+   ],
+   "elements": 96,
+   "cases": 7,
+   "median": 0.7541825851832834,
+   "q25": 0.6691132799406556,
+   "q75": 0.9710320062294449,
+   "spread": 1.451222140316161,
+   "groups": {
+    "single": 0.7671464064203107,
+    "dependent": 0.7353238647827783
+   },
+   "classes": {
+    "single": [
+     0.6088644784093886,
+     0.7541825851832834,
+     0.7803330658192996,
+     5
+    ],
+    "unary": [
+     0.8490803562323445,
+     0.9804352692301327,
+     1.1321111248124587,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    3,
+    100
+   ],
+   "elements": 300,
+   "cases": 7,
+   "median": 0.8528509189827446,
+   "q25": 0.8445783611219586,
+   "q75": 1.0820762011653013,
+   "spread": 1.2812028474514132,
+   "groups": {
+    "single": 0.9366122191297404,
+    "dependent": 0.8436701454996917
+   },
+   "classes": {
+    "single": [
+     0.845487554443414,
+     0.8528509189827446,
+     1.0285999926804155,
+     5
+    ],
+    "unary": [
+     0.9119752113074177,
+     0.9858103791815555,
+     1.0656233762196972,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    3,
+    316
+   ],
+   "elements": 948,
+   "cases": 7,
+   "median": 1.0679897681463741,
+   "q25": 1.0201542081883626,
+   "q75": 1.1513241624269925,
+   "spread": 1.1285785552672156,
+   "groups": {
+    "single": 1.0731128999330164,
+    "dependent": 1.0679897681463741
+   },
+   "classes": {
+    "single": [
+     1.0072371058650553,
+     1.0332369631980722,
+     1.1145277772857718,
+     5
+    ],
+    "unary": [
+     1.1246664713493855,
+     1.1843509268565575,
+     1.2472027518194169,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    3,
+    1000
+   ],
+   "elements": 3000,
+   "cases": 7,
+   "median": 1.1431871741854045,
+   "q25": 1.054291119012013,
+   "q75": 1.17383106647101,
+   "spread": 1.113384192756,
+   "groups": {
+    "single": 1.1076161098164796,
+    "dependent": 1.1489235064419399
+   },
+   "classes": {
+    "single": [
+     1.0731518638661919,
+     1.1431871741854045,
+     1.1489235064419399,
+     5
+    ],
+    "unary": [
+     1.0734424094228898,
+     1.113847824042498,
+     1.1557741377026616,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    10,
+    1
+   ],
+   "elements": 10,
+   "cases": 7,
+   "median": 0.8088444763494771,
+   "q25": 0.6710612915716718,
+   "q75": 0.8992268243831542,
+   "spread": 1.3400069944089652,
+   "groups": {
+    "single": 0.838120081116458,
+    "dependent": 0.7622129386834233
+   },
+   "classes": {
+    "single": [
+     0.590810302726804,
+     0.8088444763494771,
+     0.8684552975387482,
+     5
+    ],
+    "unary": [
+     0.8013181822585086,
+     0.8424297156739476,
+     0.885650471389828,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    10,
+    3
+   ],
+   "elements": 30,
+   "cases": 7,
+   "median": 0.803532074708892,
+   "q25": 0.6565340470723269,
+   "q75": 0.8485217274596359,
+   "spread": 1.292426083983667,
+   "groups": {
+    "single": 0.8103996128252192,
+    "dependent": 0.7220292931654297
+   },
+   "classes": {
+    "single": [
+     0.5969798719321628,
+     0.803532074708892,
+     0.8173258456486574,
+     5
+    ],
+    "unary": [
+     0.7588375072715069,
+     0.7975221613482383,
+     0.8381789141242251,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    10,
+    10
+   ],
+   "elements": 100,
+   "cases": 7,
+   "median": 0.7547289924196386,
+   "q25": 0.6746497799459367,
+   "q75": 0.9815086056405373,
+   "spread": 1.4548416598004241,
+   "groups": {
+    "single": 0.7689850474852367,
+    "dependent": 0.7351422319825758
+   },
+   "classes": {
+    "single": [
+     0.6191350541154719,
+     0.7547289924196386,
+     0.7835103847807141,
+     5
+    ],
+    "unary": [
+     0.8496528149874422,
+     0.9820003185903148,
+     1.1349631387094652,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    10,
+    32
+   ],
+   "elements": 320,
+   "cases": 7,
+   "median": 0.9072038508316063,
+   "q25": 0.8555691190353634,
+   "q75": 1.1446458524682412,
+   "spread": 1.3378765397222447,
+   "groups": {
+    "single": 0.9880855051212004,
+    "dependent": 0.9072038508316063
+   },
+   "classes": {
+    "single": [
+     0.855117664031285,
+     0.8560208123828059,
+     1.1405247995232366,
+     5
+    ],
+    "unary": [
+     0.9641202233799986,
+     1.024607428945797,
+     1.0888894953063752,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    10,
+    100
+   ],
+   "elements": 1000,
+   "cases": 7,
+   "median": 1.083460214382884,
+   "q25": 1.073127694388154,
+   "q75": 1.132868299654257,
+   "spread": 1.055669614695914,
+   "groups": {
+    "single": 1.0955577026964782,
+    "dependent": 1.064274426240505
+   },
+   "classes": {
+    "single": [
+     1.0820546092898373,
+     1.083460214382884,
+     1.107790266780788,
+     5
+    ],
+    "unary": [
+     1.117974048593299,
+     1.174383168956882,
+     1.2336384992697902,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    10,
+    316
+   ],
+   "elements": 3160,
+   "cases": 7,
+   "median": 1.1607828432116065,
+   "q25": 1.0631760190127413,
+   "q75": 1.204476222610464,
+   "spread": 1.1329038664067435,
+   "groups": {
+    "single": 1.112137098012865,
+    "dependent": 1.18036429247456
+   },
+   "classes": {
+    "single": [
+     1.0655299843633235,
+     1.1607828432116065,
+     1.2290806999867283,
+     5
+    ],
+    "unary": [
+     1.0675823871035612,
+     1.10392513338696,
+     1.1415050630703236,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    10,
+    1000
+   ],
+   "elements": 10000,
+   "cases": 7,
+   "median": 1.0587539036534435,
+   "q25": 1.038514667118968,
+   "q75": 1.29914944353018,
+   "spread": 1.250968796747244,
+   "groups": {
+    "single": 1.1199452260384357,
+    "dependent": 1.0587539036534435
+   },
+   "classes": {
+    "single": [
+     1.0581335433150039,
+     1.1853676856295328,
+     1.4238529505116502,
+     5
+    ],
+    "unary": [
+     1.0119283391831106,
+     1.027302111050686,
+     1.0429094497157159,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    32,
+    1
+   ],
+   "elements": 32,
+   "cases": 7,
+   "median": 0.7547470970549993,
+   "q25": 0.6364925426217214,
+   "q75": 0.8324800293251778,
+   "spread": 1.307917962237517,
+   "groups": {
+    "single": 0.7723238526449648,
+    "dependent": 0.7428712745005359
+   },
+   "classes": {
+    "single": [
+     0.5453471829092398,
+     0.7547470970549993,
+     0.7903099404977173,
+     5
+    ],
+    "unary": [
+     0.774324007892146,
+     0.807108431539876,
+     0.8412809284269205,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    32,
+    3
+   ],
+   "elements": 96,
+   "cases": 7,
+   "median": 0.7614677607007604,
+   "q25": 0.6632192399784669,
+   "q75": 0.9764971832213138,
+   "spread": 1.4723595522545732,
+   "groups": {
+    "single": 0.7695839827481528,
+    "dependent": 0.7268014003458794
+   },
+   "classes": {
+    "single": [
+     0.6051993846851276,
+     0.7614677607007604,
+     0.7777867128051055,
+     5
+    ],
+    "unary": [
+     0.8398913443228526,
+     0.970578028513354,
+     1.121599497125854,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    32,
+    10
+   ],
+   "elements": 320,
+   "cases": 7,
+   "median": 0.8663316920876946,
+   "q25": 0.8437051535681785,
+   "q75": 1.1461413966307101,
+   "spread": 1.3584620074720122,
+   "groups": {
+    "single": 0.9951201385583052,
+    "dependent": 0.8663316920876946
+   },
+   "classes": {
+    "single": [
+     0.8298150432301326,
+     0.8578277677235235,
+     1.1543856790649623,
+     5
+    ],
+    "unary": [
+     0.9274585693921166,
+     0.9928984542467825,
+     1.0629556650620018,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    32,
+    32
+   ],
+   "elements": 1024,
+   "cases": 7,
+   "median": 1.104737319752902,
+   "q25": 1.0746786930024586,
+   "q75": 1.2201162648024722,
+   "spread": 1.1353312136427374,
+   "groups": {
+    "single": 1.124105086224881,
+    "dependent": 1.0636663612040038
+   },
+   "classes": {
+    "single": [
+     1.0858050374801351,
+     1.104737319752902,
+     1.1438123998194256,
+     5
+    ],
+    "unary": [
+     1.1187060242077032,
+     1.1765937273620113,
+     1.2374768431662642,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    32,
+    100
+   ],
+   "elements": 3200,
+   "cases": 7,
+   "median": 1.155295105219575,
+   "q25": 1.066248777841222,
+   "q75": 1.2089504252921364,
+   "spread": 1.1338352272157675,
+   "groups": {
+    "single": 1.1105791224088049,
+    "dependent": 1.1852270324836203
+   },
+   "classes": {
+    "single": [
+     1.0675938827732625,
+     1.155295105219575,
+     1.2331486632998612,
+     5
+    ],
+    "unary": [
+     1.0768678341694802,
+     1.1118395519542212,
+     1.1479469903966035,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    32,
+    316
+   ],
+   "elements": 10112,
+   "cases": 7,
+   "median": 1.0686495790107766,
+   "q25": 1.046889755134035,
+   "q75": 1.4914283834165334,
+   "spread": 1.4246279286834584,
+   "groups": {
+    "single": 1.2944572973559874,
+    "dependent": 1.0686495790107766
+   },
+   "classes": {
+    "single": [
+     1.0664488489422794,
+     1.415693967144485,
+     1.5712143121914124,
+     5
+    ],
+    "unary": [
+     1.0227226926233386,
+     1.0378080488193768,
+     1.053115916917422,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    32,
+    1000
+   ],
+   "elements": 32000,
+   "cases": 7,
+   "median": 1.0154858669977616,
+   "q25": 1.0033282465943498,
+   "q75": 1.1370078622745339,
+   "spread": 1.1332361728416795,
+   "groups": {
+    "single": 1.0120117484719422,
+    "dependent": 1.0307447947840271
+   },
+   "classes": {
+    "single": [
+     1.0085495153892627,
+     1.0154858669977616,
+     1.2542259591473215,
+     5
+    ],
+    "unary": [
+     1.0061886808205593,
+     1.0143083523282346,
+     1.0224935473968972,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    100,
+    1
+   ],
+   "elements": 100,
+   "cases": 7,
+   "median": 0.7396290649412993,
+   "q25": 0.6400406341318491,
+   "q75": 0.9570611758346984,
+   "spread": 1.4953131485672873,
+   "groups": {
+    "single": 0.7245593446299097,
+    "dependent": 0.7396290649412993
+   },
+   "classes": {
+    "single": [
+     0.577582290000557,
+     0.7092530716956443,
+     0.7401959397023339,
+     5
+    ],
+    "unary": [
+     0.8528803068652732,
+     0.9834724625056926,
+     1.134060754740582,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    100,
+    3
+   ],
+   "elements": 300,
+   "cases": 7,
+   "median": 0.8724301779629379,
+   "q25": 0.8546608930837246,
+   "q75": 1.165448567676143,
+   "spread": 1.363638581228465,
+   "groups": {
+    "single": 0.9943048019230935,
+    "dependent": 0.8724301779629379
+   },
+   "classes": {
+    "single": [
+     0.8509556860300649,
+     0.8583822332445906,
+     1.1517503518104792,
+     5
+    ],
+    "unary": [
+     0.9407083037635369,
+     1.0143300118708916,
+     1.0937135016941724,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    100,
+    10
+   ],
+   "elements": 1000,
+   "cases": 7,
+   "median": 1.116624798451547,
+   "q25": 1.0719519445878871,
+   "q75": 1.1901185727454633,
+   "spread": 1.1102350051736745,
+   "groups": {
+    "single": 1.1421083964166368,
+    "dependent": 1.0664549149109095
+   },
+   "classes": {
+    "single": [
+     1.077477308641543,
+     1.116624798451547,
+     1.168173580753574,
+     5
+    ],
+    "unary": [
+     1.1202599374127629,
+     1.1767795429747605,
+     1.2361506883501532,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    100,
+    32
+   ],
+   "elements": 3200,
+   "cases": 7,
+   "median": 1.1686939102307365,
+   "q25": 1.1126868882641747,
+   "q75": 1.210855414606009,
+   "spread": 1.088226550862822,
+   "groups": {
+    "single": 1.168131271355707,
+    "dependent": 1.1903193490798256
+   },
+   "classes": {
+    "single": [
+     1.1675689033492949,
+     1.1686939102307365,
+     1.231745779999385,
+     5
+    ],
+    "unary": [
+     1.0696998999792766,
+     1.108483248889372,
+     1.1486727381129438,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    100,
+    100
+   ],
+   "elements": 10000,
+   "cases": 7,
+   "median": 1.0631759198712514,
+   "q25": 1.041975056302965,
+   "q75": 1.241416475503891,
+   "spread": 1.1914070955868796,
+   "groups": {
+    "single": 1.079496946343924,
+    "dependent": 1.060345591934818
+   },
+   "classes": {
+    "single": [
+     1.0631759198712514,
+     1.0960685201626592,
+     1.406038798946436,
+     5
+    ],
+    "unary": [
+     1.0185363285988989,
+     1.0322862936240904,
+     1.0462218794591496,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    100,
+    316
+   ],
+   "elements": 31600,
+   "cases": 7,
+   "median": 1.0311585312157827,
+   "q25": 1.015477251057124,
+   "q75": 1.3638479292555272,
+   "spread": 1.343061036409969,
+   "groups": {
+    "single": 1.2237671491128332,
+    "dependent": 1.0311585312157827
+   },
+   "classes": {
+    "single": [
+     1.0177235672472882,
+     1.2640496922120166,
+     1.4715253566333701,
+     5
+    ],
+    "unary": [
+     1.0013357054256098,
+     1.0111795580665293,
+     1.0211201828831444,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    100,
+    1000
+   ],
+   "elements": 100000,
+   "cases": 7,
+   "median": 1.1656471952869014,
+   "q25": 1.0699604113389283,
+   "q75": 2.1447998807459485,
+   "spread": 2.0045600360689853,
+   "groups": {
+    "single": 1.0699604113389283,
+    "dependent": 2.4169494991900256
+   },
+   "classes": {
+    "single": [
+     1.028985033056804,
+     1.1125674767412972,
+     1.9032944337436322,
+     5
+    ],
+    "unary": [
+     1.4546018077562084,
+     1.815185956507921,
+     2.265156030423277,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    316,
+    1
+   ],
+   "elements": 316,
+   "cases": 7,
+   "median": 0.8863822071030998,
+   "q25": 0.8116756277678532,
+   "q75": 1.1596539804861974,
+   "spread": 1.4287160299186281,
+   "groups": {
+    "single": 0.9735893494059942,
+    "dependent": 0.8863822071030998
+   },
+   "classes": {
+    "single": [
+     0.8010518008729643,
+     0.8224403515407835,
+     1.1525166773505315,
+     5
+    ],
+    "unary": [
+     0.9494414307612306,
+     1.016986829408548,
+     1.0893375596230452,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    316,
+    3
+   ],
+   "elements": 948,
+   "cases": 7,
+   "median": 1.1112170249212836,
+   "q25": 1.0354287059375715,
+   "q75": 1.181952313350058,
+   "spread": 1.141510088113513,
+   "groups": {
+    "single": 1.1290053523367998,
+    "dependent": 1.0627840278634113
+   },
+   "classes": {
+    "single": [
+     1.0087774909780085,
+     1.1112170249212836,
+     1.147078434741796,
+     5
+    ],
+    "unary": [
+     1.1217201694160506,
+     1.1839245843808295,
+     1.2495785131785682,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    316,
+    10
+   ],
+   "elements": 3160,
+   "cases": 7,
+   "median": 1.1899022531640469,
+   "q25": 1.1097793300890795,
+   "q75": 1.3141567605942952,
+   "spread": 1.1841604226750293,
+   "groups": {
+    "single": 1.2375401076682608,
+    "dependent": 1.1899022531640469
+   },
+   "classes": {
+    "single": [
+     1.1663454259244586,
+     1.3130805711984357,
+     1.3152338320256072,
+     5
+    ],
+    "unary": [
+     1.0777260911455009,
+     1.113890996624967,
+     1.1512694761276328,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    316,
+    32
+   ],
+   "elements": 10112,
+   "cases": 7,
+   "median": 1.059341053210951,
+   "q25": 1.0331375981980129,
+   "q75": 1.2431788507236803,
+   "spread": 1.2033042383628463,
+   "groups": {
+    "single": 1.0559943941895922,
+    "dependent": 1.081540745736346
+   },
+   "classes": {
+    "single": [
+     1.0526583078979233,
+     1.059341053210951,
+     1.4289740455727642,
+     5
+    ],
+    "unary": [
+     1.0152111976120266,
+     1.036856277541241,
+     1.0589628471449626,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    316,
+    100
+   ],
+   "elements": 31600,
+   "cases": 7,
+   "median": 1.0141478889137439,
+   "q25": 1.010100649839843,
+   "q75": 1.1411230800270271,
+   "spread": 1.1297122521482967,
+   "groups": {
+    "single": 1.0134345108850713,
+    "dependent": 1.0290125847278324
+   },
+   "classes": {
+    "single": [
+     1.0127216346650771,
+     1.0141478889137439,
+     1.2654479673975831,
+     5
+    ],
+    "unary": [
+     0.9978230057999978,
+     1.0081130512853878,
+     1.0185092128208948,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    316,
+    316
+   ],
+   "elements": 99856,
+   "cases": 7,
+   "median": 1.140971195541209,
+   "q25": 1.0618643912559629,
+   "q75": 2.1262231199276616,
+   "spread": 2.0023490169142835,
+   "groups": {
+    "single": 1.0618643912559629,
+    "dependent": 2.4082278754401134
+   },
+   "classes": {
+    "single": [
+     1.0360075307902579,
+     1.0883665918502603,
+     1.8772412701554333,
+     5
+    ],
+    "unary": [
+     1.4398705135248704,
+     1.8170722484672,
+     2.29308922235431,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    316,
+    1000
+   ],
+   "elements": 316000,
+   "cases": 7,
+   "median": 2.260195908970924,
+   "q25": 1.4581359034559158,
+   "q75": 4.385975512562659,
+   "spread": 3.0079332812308475,
+   "groups": {
+    "single": 2.3699910069807566,
+    "dependent": 2.260195908970924
+   },
+   "classes": {
+    "single": [
+     1.5428213897790308,
+     3.640640070445309,
+     5.283900859347053,
+     5
+    ],
+    "unary": [
+     1.3986354507316476,
+     1.6412889645787823,
+     1.9260411738018706,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1000,
+    1
+   ],
+   "elements": 1000,
+   "cases": 7,
+   "median": 1.1010395619810054,
+   "q25": 1.0531870047739311,
+   "q75": 1.172883902579627,
+   "spread": 1.113652083877914,
+   "groups": {
+    "single": 1.130683951377311,
+    "dependent": 1.0637801174308297
+   },
+   "classes": {
+    "single": [
+     1.042699378235755,
+     1.1010395619810054,
+     1.161126486319903,
+     5
+    ],
+    "unary": [
+     1.1234087596701097,
+     1.1863797984413793,
+     1.2528805869050912,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1000,
+    3
+   ],
+   "elements": 3000,
+   "cases": 7,
+   "median": 1.176914469606948,
+   "q25": 1.1218315993055539,
+   "q75": 1.2389663964206201,
+   "spread": 1.104413886351192,
+   "groups": {
+    "single": 1.235949536916055,
+    "dependent": 1.176914469606948
+   },
+   "classes": {
+    "single": [
+     1.1725492027245024,
+     1.1782803970556055,
+     1.3027779595547795,
+     5
+    ],
+    "unary": [
+     1.0668937196588864,
+     1.1023742831468262,
+     1.139034786456536,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1000,
+    10
+   ],
+   "elements": 10000,
+   "cases": 7,
+   "median": 1.0572396520260399,
+   "q25": 1.028700007836354,
+   "q75": 1.2219479161694613,
+   "spread": 1.187856427394768,
+   "groups": {
+    "single": 1.0568046242433797,
+    "dependent": 1.0572396520260399
+   },
+   "classes": {
+    "single": [
+     1.0527411872265129,
+     1.0608837455714433,
+     1.4074649706567073,
+     5
+    ],
+    "unary": [
+     1.0103153028237128,
+     1.0257206567781258,
+     1.0413609125793166,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1000,
+    32
+   ],
+   "elements": 32000,
+   "cases": 7,
+   "median": 1.0213499020819656,
+   "q25": 1.0094240851338523,
+   "q75": 1.1653914204461255,
+   "spread": 1.154511208528962,
+   "groups": {
+    "single": 1.0497020676644682,
+    "dependent": 1.019773207088078
+   },
+   "classes": {
+    "single": [
+     1.0213499020819656,
+     1.0788412752700611,
+     1.258885059351722,
+     5
+    ],
+    "unary": [
+     1.0007776728517614,
+     1.0070698736608854,
+     1.0134016354954962,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1000,
+    100
+   ],
+   "elements": 100000,
+   "cases": 7,
+   "median": 1.1620417282005233,
+   "q25": 1.017472932634905,
+   "q75": 1.8579680315633575,
+   "spread": 1.826061384013292,
+   "groups": {
+    "single": 1.017472932634905,
+    "dependent": 1.9344292656055484
+   },
+   "classes": {
+    "single": [
+     1.008933976072879,
+     1.0260841573342894,
+     1.7845290431081224,
+     5
+    ],
+    "unary": [
+     1.3199409606164136,
+     1.4992956769383217,
+     1.7030212668270972,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1000,
+    316
+   ],
+   "elements": 316000,
+   "cases": 7,
+   "median": 2.294860081392701,
+   "q25": 1.4812854358999872,
+   "q75": 4.317980622960604,
+   "spread": 2.915022667685328,
+   "groups": {
+    "single": 2.3331069092955565,
+    "dependent": 2.294860081392701
+   },
+   "classes": {
+    "single": [
+     1.5332571256195033,
+     3.550212002441075,
+     5.25178683623492,
+     5
+    ],
+    "unary": [
+     1.4093647499544835,
+     1.65806292044079,
+     1.9506466642006108,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  },
+  {
+   "shape": [
+    1000,
+    1000
+   ],
+   "elements": 1000000,
+   "cases": 7,
+   "median": 2.25736360041168,
+   "q25": 1.2445532471373866,
+   "q75": 4.688375512341384,
+   "spread": 3.7671152464751336,
+   "groups": {
+    "single": 2.260055703834381,
+    "dependent": 2.25736360041168
+   },
+   "classes": {
+    "single": [
+     1.2470784215910338,
+     4.09585451564279,
+     5.366612720440519,
+     5
+    ],
+    "unary": [
+     1.3733393472868474,
+     1.6207613864461197,
+     1.9127592004003637,
+     2
+    ]
+   },
+   "identical": 7,
+   "fallbacks": 0
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+numpy2x
+Copyright 2026 ILNumerics GmbH
+
+Code: the Clear BSD License (file LICENSE), which grants no patent rights.
+Patents: the numpy2x Patent License (file PATENTS). Patents of ILNumerics:
+https://ilnumerics.net/patents.html.
+
+Third-party code
+- NumPy (https://numpy.org), BSD 3-Clause License,
+  Copyright (c) 2005-2025, NumPy Developers. Parts of numpy2x's Python
+  wrappers are ported from NumPy's own Python code.
+- The lock-free task queue (src/runtime/task_queue.hpp) implements the bounded
+  MPMC queue algorithm published by Dmitry Vyukov (1024cores.net).

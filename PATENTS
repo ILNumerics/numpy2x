@@ -1,0 +1,314 @@
+numpy2x Patent License
+
+The numpy2x source code is licensed under the Clear BSD License (file
+LICENSE), which grants no rights under patents. Rights under patents of
+ILNumerics are granted solely by this Patent License.
+
+1. Definitions
+
+"ILNumerics" means ILNumerics GmbH, Berlin, Germany.
+
+"Licensed Patents" means the patents and patent applications listed in the
+Schedule at the end of this license and all other patents and patent
+applications, in any country, that ILNumerics owns, or has the right to
+license without payment to third parties, at any time during this license,
+in each case to the extent a Licensed Version would infringe their claims.
+Patents granted later on such applications, and their national or regional
+phases, continuations, divisionals and reissues, are included. Neither the
+Schedule nor the list at https://ilnumerics.net/patents.html is exhaustive; a
+Licensed Patent is covered whether listed or not.
+
+"Released Version" means a version of numpy2x that ILNumerics has expressly
+designated and published as a release, either as source code tagged as a
+release in the repository https://github.com/ILNumerics/numpy2x, or as a
+package that ILNumerics uploads to the Python Package Index under the name
+"numpy2x", including a build of that unchanged source code.
+
+"Derived Version" means any other version of numpy2x, including other states
+of the repository (such as branches, pull requests and commits between
+releases), forks, versions with changed source code, and builds that add or
+replace program code (for example from viproc or other software).
+
+"Licensed Version" means a Released Version or a Derived Version, provided
+that it meets all of these requirements:
+
+(i)   it runs at most two Worker Threads in each process;
+(ii)  it does not perform Staged Execution; and
+(iii) it runs only as an extension of NumPy within a Python program, issuing
+      array operations of that program and computing them with that NumPy's
+      routines.
+
+Examples of such Derived Versions are versions with bug fixes, builds for
+other operating systems or processor architectures, and repackaged versions.
+
+A version that is used from, or adapted to, another programming language or
+environment, or adapted to another array library, array compiler or parallel
+or distributed runtime, or that computes array operations with other routines,
+is not a Licensed Version. Examples of such languages, environments,
+libraries, compilers and runtimes are:
+
+- languages and environments: MATLAB, GNU Octave, R, Julia, Mathematica,
+  Scilab, .NET, Java and other JVM languages, JavaScript and WebAssembly;
+- array and tensor libraries: PyTorch, TensorFlow, JAX, CuPy, MLX, Dask Array,
+  Xarray backends other than NumPy, Apache MXNet, Arkouda, Heat, Ramba,
+  Bohrium, Mars/Xorbits, Modin and Intel's Data Parallel Extension for NumPy
+  (dpnp, dpctl, numba-dpex);
+- compilers and code generators for array operations: Numba, Pythran, Cython,
+  numexpr, Taichi, Triton, NVIDIA Warp, Halide, Weld, Mojo, MLIR- and
+  XLA-based compilers;
+- parallel and distributed runtimes and toolkits: Legion, Legate (including
+  cuPyNumeric), Intel oneAPI (including oneTBB, oneMKL and SYCL), OpenMP,
+  OpenCL, CUDA, ROCm, Kokkos, RAJA, HPX, Taskflow, StarPU, PaRSEC, Charm++,
+  Chapel, Ray, Dask, Apache Spark and MPI.
+
+The names above are trademarks of their owners and are used only to describe
+the software meant.
+
+A Licensed Version stays one if it is built with any C or C++ compiler, if the
+same Python program also uses such software, or if NumPy uses such software
+internally, provided that numpy2x itself uses no more than two Worker Threads
+and computes its array operations only with NumPy's routines.
+
+A Licensed Version stays one when it is distributed or run together with other
+software, for example as a dependency of a Python application, in an installer
+or in a container image, unless that software is a Competing Product.
+
+"Competing Product" means software, whether or not it is offered on a market,
+sold, published or used commercially, that offers to other programs or to its
+users, for general-purpose use, array functions similar to those of numpy2x
+(such as elementary arithmetic, comparisons, mathematical and trigonometric
+functions, reductions, indexing and reshaping, linear algebra or Fourier
+transforms, or general-purpose combinations of them) or array objects whose
+functionality resembles that of numpy2x arrays, whatever they are called and
+however they are wrapped (for example as a library, an API, a language, an
+environment, an expression or formula input, or a service), and that computes
+or executes them, in whole or in part, with numpy2x, its source code, its
+compiled components or its execution. Taking or returning arrays as data does
+not make software a Competing Product, nor does using numpy2x for the
+software's own computations, such as in a simulation, a data analysis tool, a
+machine-learning model or a library with task-specific functions such as
+fitting a model or filtering a signal. This license grants no rights for
+Competing Products, including the Licensed Versions they contain.
+
+"Staged Execution" means that an operation that uses the result of another
+operation as an input (the consumer and the producer) uses information about a
+state of the producer or of that result, reached before the producer has
+computed its whole result, to prepare or perform its own computation. Such
+states are, for example: a result shape, size or data type determined while
+the producer is pending; a selected device, processor or memory location;
+allocated result memory; and computed parts of the result, such as elements,
+rows, columns, tiles, blocks or chunks. Such uses are, for example:
+determining the consumer's own result shape or data type, selecting its
+device, allocating its memory, starting its computation, computing parts of
+its result and passing partial results on to further operations. In
+particular, in the terms of the claim quoted in the Schedule, starting,
+continuing or completing the setup code or the kernel code of an operation
+because the configuration of a runtime instance it receives as input (its size
+information, such as shape and data type, its memory reference or its element
+values) has been updated while that runtime instance is still partially
+configured is Staged Execution, and so is signalling such updates to consumers
+for that purpose. Waiting until the producer has computed its whole result is
+not Staged Execution.
+
+"Single-Stage Execution" is not Staged Execution. It means that (i) a consumer
+learns of a producer only when the producer has computed its whole result, and
+starts computing only when all its inputs have been computed completely; (ii)
+the thread that issues an operation determines its result shape and data type
+when it issues it, from those of its inputs, which that thread itself
+determined when it issued the operations producing them; and (iii) an
+operation passes internal states, such as allocating its own result memory
+right before computing it, of which no other operation learns, and on which no
+other operation acts, before it has computed its whole result. Waiting until
+operations that read data have finished reading it, before that data is
+overwritten, and counting such readers, is not Staged Execution either. Nor is
+computing one operation in several parts on several Worker Threads, provided
+that no consumer starts before all parts are computed. Released Versions
+perform only Single-Stage Execution.
+
+"Worker Thread" means a thread that computes array operations for numpy2x. The
+thread of the Python program that issues the operations is not a Worker
+Thread, and neither are threads that NumPy or the libraries it uses (such as
+BLAS or LAPACK) start on their own.
+
+"Affiliate" means any entity that controls, is controlled by or is under
+common control with You, where control means direct or indirect ownership of
+more than 50% of the voting rights.
+
+"You" means the individual or legal entity exercising rights under this
+license; for a legal entity, "You" includes its Affiliates. A breach of a
+condition, or a claim under section 5, by one of them therefore affects the
+license of all of them.
+
+"Cluster Execution" means running numpy2x on two or more computers that work
+together on one program or computation, such as with MPI, Dask or Ray, and
+running instances of numpy2x on several computers of a compute cluster under a
+common job scheduler. Running programs on several computers that are used
+independently of each other, such as separate workstations, is not Cluster
+Execution.
+
+"Testing, Development or Evaluation" means running numpy2x to develop or test
+software, including automated tests and continuous integration, or to evaluate
+numpy2x for up to ninety (90) days from the first day on which You run numpy2x
+for evaluation. The ninety-day limit applies to the evaluation of numpy2x
+itself, not to ongoing development, testing or continuous integration. Any
+other use is production use, including computations whose results You use
+beyond testing numpy2x or Your software.
+
+2. Grant
+
+You accept this license by exercising any right under it. Subject to the
+conditions in section 3, ILNumerics grants You a worldwide, royalty-free,
+non-exclusive, non-transferable and non-sublicensable license under the
+Licensed Patents to make, use, offer, put on the market, import and possess
+Licensed Versions, and to use the methods claimed in the Licensed Patents by
+running Licensed Versions.
+
+Distributing Licensed Versions under this section is licensed regardless of
+how recipients use them, subject to section 3(c). Each recipient receives this
+license directly from ILNumerics, under these terms.
+
+If ILNumerics transfers a Licensed Patent, licenses granted under this section
+before the transfer remain in force.
+
+3. Conditions
+
+The license in section 2 covers only uses that meet all of these conditions:
+
+(a) In each process, at most two Worker Threads of numpy2x run at the same
+    time.
+(b) numpy2x is not used for Cluster Execution, except for Testing, Development
+    or Evaluation, unless explicitly allowed by ILNumerics in writing.
+(c) You do not make numpy2x available to third parties as part of a generally
+    available Python distribution, computing platform, hosted development
+    environment or managed service, or offer it to third parties as a hosted
+    or managed service for running their programs or array computations,
+    whether free of charge or for payment, pre-installed, enabled by default
+    or offered as an optional component, unless explicitly allowed by
+    ILNumerics in writing. This does not prevent You from using numpy2x within
+    Your own applications or services, including on third-party cloud
+    infrastructure. Package repositories and software distributions that only
+    redistribute Licensed Versions for their users to install, such as the
+    Python Package Index, conda-forge or Linux distributions, do not make
+    numpy2x available in this sense.
+
+4. Scope of this license
+
+No license is granted for versions of numpy2x other than Licensed Versions, or
+for any other implementation of the methods covered by the Licensed Patents.
+No rights are granted by implication, estoppel or otherwise beyond section 2.
+
+This license limits only acts that would infringe a Licensed Patent. It does
+not restrict any right under the Clear BSD License, any use in a country in
+which no Licensed Patent is in force, or any use that the applicable law
+permits without a license, such as private non-commercial use and experimental
+use (in Germany section 11 nos. 1 and 2 of the Patent Act, Patentgesetz). Nor
+does it restrict the use of ideas, knowledge or information that the Licensed
+Patents do not protect, including what is learned from reading the numpy2x
+source code, or the development and use of Your own technology that does not
+use the Licensed Patents.
+
+5. Termination
+
+Uses that do not meet a condition of section 3 are not licensed, except as
+follows. If such a use started without Your knowledge, for example by mistake
+or through software of a third party, and You end it within thirty (30) days
+after becoming aware of it, it counts as licensed for its whole duration,
+including these thirty (30) days, and Your license continues. If You do not
+end it within these thirty (30) days, the license in section 2 ends for You
+entirely. A use that You knowingly started, or knowingly continued after these
+thirty (30) days, is not licensed. For a legal entity, the knowledge of the
+persons responsible for the use of numpy2x counts.
+
+The license in section 2 also ends for You if You start or join a claim,
+action or proceeding alleging, on the basis of a patent that You own or
+control, that a Licensed Version infringes a patent, other than as a
+counterclaim in a proceeding that ILNumerics started against You. This does
+not restrict You from defending Yourself, challenging the validity or
+enforceability of a patent, or complying with a binding order of a court or
+authority.
+
+A license that has ended under this section is restored only by a written
+declaration of ILNumerics. Termination does not affect the Clear BSD License.
+
+6. Other uses
+
+For uses beyond this license, such as more Worker Threads, Cluster Execution
+in production, integration into a generally available platform or managed
+service, Competing Products, or versions that change how work is distributed
+or perform Staged Execution, contact ILNumerics for a commercial license:
+https://ilnumerics.net
+
+7. Warranty and liability
+
+This license is granted free of charge. ILNumerics gives no warranty that the
+Licensed Patents are valid or that numpy2x does not infringe rights of third
+parties, and is liable only for intent and gross negligence. Where mandatory
+law nevertheless makes ILNumerics liable for slight negligence in breaching an
+obligation whose performance is essential to this license and on whose
+fulfilment You may regularly rely, that liability is limited to the damage
+that is foreseeable and typical for this kind of license. This does not limit
+liability for injury to life, body or health, under mandatory product
+liability law (such as the German Product Liability Act,
+Produkthaftungsgesetz), or for fraudulently concealed defects.
+
+8. Governing law and jurisdiction
+
+This license is governed by the laws of the Federal Republic of Germany,
+excluding the United Nations Convention on Contracts for the International
+Sale of Goods. If You are a consumer, this choice of law does not deprive You
+of the protection of the mandatory provisions of the law of the country in
+which You have Your habitual residence. The existence, validity, scope and
+infringement of each Licensed Patent are governed by the law of the country
+that granted it.
+
+If You are a merchant, a legal entity under public law or a special fund under
+public law, or have no general place of jurisdiction in Germany, the exclusive
+place of jurisdiction for all disputes arising from or in connection with this
+license is Munich, Germany; patent disputes are brought before the Landgericht
+München I. ILNumerics may also bring an action at Your general place of
+jurisdiction. The jurisdiction of the Unified Patent Court remains unaffected.
+Otherwise the statutory places of jurisdiction apply.
+
+Schedule: Licensed Patent families (as of 4 November 2026)
+
+Family 1, priority date 21 November 2011, "Computerimplementierte Methode
+zur effizienten Formulierung und effizienten Ausführung von allgemeinen
+numerischen Algorithmen innerhalb von speicherverwalteten Umgebungen":
+  DE 10 2011 119 404 B4 (granted).
+
+Family 2, priority date 28 April 2017, "A computer-implemented method, a
+computer-readable medium and a heterogeneous computing system":
+  EP 3 443 458 B1 (granted, also in force in the United Kingdom);
+  US 11,144,348 B2; JP 7220914 B2; CN 110383247 B.
+
+Family 3, priority date 15 February 2022, "A computer-implemented method and
+a computer-readable medium":
+  EP 4 227 795 B1; US 12,254,296 B2; JP 7495028 B2; application
+  CN 202310092100.0 (published as CN 116610436 A).
+
+Family 4, priority date 15 May 2023 (priority application EP 23173406.2,
+withdrawn), "A computer-implemented method and a computer-readable medium":
+  international application PCT/EP2024/062463 and the applications based on
+  it: EP 24724257.1, US 18/867,327, JP 2025-567746, CN 202480032795.6,
+  IN 202517095802.
+
+  For information, the method that claim 1 of EP 24724257.1 (as amended on 14
+  September 2026) and claim 34 of US 18/867,327 (as amended on 31 August 2026)
+  have in common reads as follows. It does not limit the Licensed Patents, and
+  the claims as granted prevail:
+
+    A computer-implemented method for executing a program code comprising
+    program segments each being configured to be executable on a processing
+    unit and comprising a respective kernel code and a respective setup code,
+    each kernel code comprising an array operation corresponding to one array
+    instruction of a sequence of array instructions, each of the program
+    segments being configured to receive, as a respective runtime input, an at
+    least partially configured runtime instance of a respective array data
+    structure capable of storing multiple elements of a respective common data
+    type, the method comprising: (a) starting executing the setup code of a
+    program segment of the program segments on a first sub-unit of the
+    processing unit to partially configure a runtime instance of an array data
+    structure as runtime output of the respective program segment; and (b)
+    executing the kernel code of the program segment on the processing unit,
+    when a configuration of the runtime instance, which was received as
+    respective runtime input, is completed and/or updated.

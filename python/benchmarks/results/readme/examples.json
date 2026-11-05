@@ -1,0 +1,270 @@
+{
+ "machine": {
+  "label": "windows",
+  "os": "Windows-11-10.0.26200-SP0",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-12700K",
+  "cores": 12,
+  "hardware_threads": 20,
+  "logical_cpus": 20,
+  "ram_bytes": 68448337920,
+  "python": "3.13.2",
+  "numpy": "2.5.4",
+  "numpy2x": "0.1.0",
+  "build": "2026-11-02T10:43:57 #1fa2bfff",
+  "build_type": "",
+  "elision": "backtrace",
+  "blas_threads": "default",
+  "date": "2026-11-02T11:11:12",
+  "workers": 2
+ },
+ "rounds": 4,
+ "examples": {
+  "loop": [
+   {
+    "name": "loop 1500 x 1500",
+    "numpy_s": 0.021366450004279613,
+    "numpy2x_s": 0.011281949991825968,
+    "speedup": 1.8857749573111664,
+    "identical": true,
+    "rounds": [
+     {
+      "numpy_s": 0.02208060002885759,
+      "numpy2x_s": 0.011277199955657125,
+      "speedup": 1.9579860351576917,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.021999500109814107,
+      "numpy2x_s": 0.011286700027994812,
+      "speedup": 1.9491525472678417,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.02073339989874512,
+      "numpy2x_s": 0.011432899977080524,
+      "speedup": 1.8134856370920116,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.019744399935007095,
+      "numpy2x_s": 0.010834300075657666,
+      "speedup": 1.8223973673544913,
+      "identical": true
+     }
+    ]
+   }
+  ],
+  "kmeans": [
+   {
+    "name": "kmeans 150 x 150, k = 15",
+    "numpy_s": 0.0038703500176779926,
+    "numpy2x_s": 0.003541799960657954,
+    "speedup": 1.0934408675173874,
+    "identical": true,
+    "rounds": [
+     {
+      "numpy_s": 0.0038853000150993466,
+      "numpy2x_s": 0.0036105000181123614,
+      "speedup": 1.0761113407030687,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.0038554000202566385,
+      "numpy2x_s": 0.0034593999153003097,
+      "speedup": 1.11447075060761,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.003890500054694712,
+      "numpy2x_s": 0.0035302999895066023,
+      "speedup": 1.102031007636394,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.0038548000156879425,
+      "numpy2x_s": 0.003553299931809306,
+      "speedup": 1.0848507273983807,
+      "identical": true
+     }
+    ],
+    "size": 150,
+    "k": 15
+   },
+   {
+    "name": "kmeans 500 x 500, k = 50",
+    "numpy_s": 0.04049400001531467,
+    "numpy2x_s": 0.021292150020599365,
+    "speedup": 1.899549790245692,
+    "identical": true,
+    "rounds": [
+     {
+      "numpy_s": 0.04079640004783869,
+      "numpy2x_s": 0.021659199963323772,
+      "speedup": 1.8835598783390226,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.04052899999078363,
+      "numpy2x_s": 0.021346300025470555,
+      "speedup": 1.8986428534417743,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.04036189999897033,
+      "numpy2x_s": 0.021238000015728176,
+      "speedup": 1.9004567270496098,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.040459000039845705,
+      "numpy2x_s": 0.021093500079587102,
+      "speedup": 1.9180790237367604,
+      "identical": true
+     }
+    ],
+    "size": 500,
+    "k": 50
+   },
+   {
+    "name": "kmeans 1000 x 1000, k = 50",
+    "numpy_s": 0.1737002999871038,
+    "numpy2x_s": 0.07321055000647902,
+    "speedup": 2.372612886757816,
+    "identical": true,
+    "rounds": [
+     {
+      "numpy_s": 0.17146999994292855,
+      "numpy2x_s": 0.07196130009833723,
+      "speedup": 2.382808533317349,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.17358039994724095,
+      "numpy2x_s": 0.07316370005719364,
+      "speedup": 2.3724934607127497,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.17411589995026588,
+      "numpy2x_s": 0.07393210008740425,
+      "speedup": 2.3550785077716174,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.17382020002696663,
+      "numpy2x_s": 0.07325739995576441,
+      "speedup": 2.372732312802882,
+      "identical": true
+     }
+    ],
+    "size": 1000,
+    "k": 50
+   },
+   {
+    "name": "kmeans 1500 x 1500, k = 50",
+    "numpy_s": 0.4481973000220023,
+    "numpy2x_s": 0.17508365004323423,
+    "speedup": 2.5429729758628703,
+    "identical": true,
+    "rounds": [
+     {
+      "numpy_s": 0.44782530004158616,
+      "numpy2x_s": 0.17538040003273636,
+      "speedup": 2.553451240606108,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.44264689995907247,
+      "numpy2x_s": 0.1747869000537321,
+      "speedup": 2.532494711119633,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.44856930000241846,
+      "numpy2x_s": 0.1744736999971792,
+      "speedup": 2.5709851972513373,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.44870199996512383,
+      "numpy2x_s": 0.1774213999742642,
+      "speedup": 2.529018483848116,
+      "identical": true
+     }
+    ],
+    "size": 1500,
+    "k": 50
+   }
+  ],
+  "few_ops": [
+   {
+    "name": "few_ops 100 x 100",
+    "numpy_s": 0.00014235003618523479,
+    "numpy2x_s": 8.070003241300583e-05,
+    "speedup": 1.8121505004661171,
+    "identical": true,
+    "rounds": [
+     {
+      "numpy_s": 0.0001436000457033515,
+      "numpy2x_s": 9.680003859102726e-05,
+      "speedup": 1.483470955110366,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.0001425000373274088,
+      "numpy2x_s": 9.410001803189516e-05,
+      "speedup": 1.5143465464492096,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.0001420000335201621,
+      "numpy2x_s": 6.73000467941165e-05,
+      "speedup": 2.1099544544830247,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.00014220003504306078,
+      "numpy2x_s": 6.689992733299732e-05,
+      "speedup": 2.125563370723168,
+      "identical": true
+     }
+    ],
+    "size": 100
+   },
+   {
+    "name": "few_ops 500 x 500",
+    "numpy_s": 0.007036900031380355,
+    "numpy2x_s": 0.002086400054395199,
+    "speedup": 3.469834611647439,
+    "identical": true,
+    "rounds": [
+     {
+      "numpy_s": 0.006894199992530048,
+      "numpy2x_s": 0.002452300046570599,
+      "speedup": 2.8113199288852075,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.007037800038233399,
+      "numpy2x_s": 0.0024927000049501657,
+      "speedup": 2.8233642332640425,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.007036000024527311,
+      "numpy2x_s": 0.0017092999769374728,
+      "speedup": 4.1163049900308355,
+      "identical": true
+     },
+     {
+      "numpy_s": 0.007165500079281628,
+      "numpy2x_s": 0.0017205000622197986,
+      "speedup": 4.164777576373151,
+      "identical": true
+     }
+    ],
+    "size": 500
+   }
+  ]
+ }
+}

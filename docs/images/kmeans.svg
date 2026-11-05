@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="294" height="198" viewBox="0 0 294 198" role="img">
+<style>
+  .bg{fill:none}
+  .t{font:600 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#0b0b0b}
+  .l{font:12px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#52514e}
+  .v{font:600 12px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#0b0b0b}
+  .c{font:11px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+  .grid{stroke:#e1e0d9;stroke-width:1}
+  .base{stroke:#c3c2b7;stroke-width:1}
+  .np{fill:#b9b8ae}
+  .nx{fill:#2a78d6}
+  .k0{fill:#c93b3b}.k1{fill:#e98a86}.k2{fill:#f4c6c2}.k3{fill:#f0efec}
+  .k4{fill:#cde2fb}.k5{fill:#86b6ef}.k6{fill:#2a78d6}
+  .dk{fill:#0b0b0b}.lt{fill:#ffffff}
+  @media (prefers-color-scheme: dark){
+    .t,.v{fill:#f0efec}.l{fill:#c3c2b7}
+    .grid{stroke:#2c2c2a}.base{stroke:#383835}
+    .np{fill:#6b6a63}.nx{fill:#3987e5}
+    .k0{fill:#b83232}.k1{fill:#8f3b38}.k2{fill:#5a3331}.k3{fill:#383835}
+    .k4{fill:#1f3a5c}.k5{fill:#25558f}.k6{fill:#3987e5}
+    .dk{fill:#f0efec}
+  }
+</style>
+<text class="t" x="0" y="16">k-means, speedup vs. NumPy</text>
+<rect class="np" x="0" y="28" width="10" height="10" rx="2"/><text class="l" x="14" y="37">NumPy</text>
+<rect class="nx" x="66" y="28" width="10" height="10" rx="2"/><text class="l" x="80" y="37">numpy2x</text>
+<line class="grid" x1="34" x2="290" y1="172.0" y2="172.0"/><text class="l" x="28" y="176.0" text-anchor="end">0x</text>
+<line class="grid" x1="34" x2="290" y1="132.0" y2="132.0"/><text class="l" x="28" y="136.0" text-anchor="end">1x</text>
+<line class="grid" x1="34" x2="290" y1="92.0" y2="92.0"/><text class="l" x="28" y="96.0" text-anchor="end">2x</text>
+<line class="grid" x1="34" x2="290" y1="52.0" y2="52.0"/><text class="l" x="28" y="56.0" text-anchor="end">3x</text>
+<path d="M42.0,172.0 V136.0 Q42.0,132.0 46.0,132.0 H60.0 Q64.0,132.0 64.0,136.0 V172.0 Z" class="np"><title>NumPy: 1x</title></path>
+<path d="M66.0,172.0 V132.3 Q66.0,128.3 70.0,128.3 H84.0 Q88.0,128.3 88.0,132.3 V172.0 Z" class="nx"><title>numpy2x: 1.09x</title></path>
+<text class="v" x="77.0" y="123.3" text-anchor="middle">1.1x</text>
+<text class="l" x="65.0" y="189" text-anchor="middle">150²</text>
+<path d="M104.0,172.0 V136.0 Q104.0,132.0 108.0,132.0 H122.0 Q126.0,132.0 126.0,136.0 V172.0 Z" class="np"><title>NumPy: 1x</title></path>
+<path d="M128.0,172.0 V100.0 Q128.0,96.0 132.0,96.0 H146.0 Q150.0,96.0 150.0,100.0 V172.0 Z" class="nx"><title>numpy2x: 1.90x</title></path>
+<text class="v" x="139.0" y="91.0" text-anchor="middle">1.9x</text>
+<text class="l" x="127.0" y="189" text-anchor="middle">500²</text>
+<path d="M166.0,172.0 V136.0 Q166.0,132.0 170.0,132.0 H184.0 Q188.0,132.0 188.0,136.0 V172.0 Z" class="np"><title>NumPy: 1x</title></path>
+<path d="M190.0,172.0 V81.1 Q190.0,77.1 194.0,77.1 H208.0 Q212.0,77.1 212.0,81.1 V172.0 Z" class="nx"><title>numpy2x: 2.37x</title></path>
+<text class="v" x="201.0" y="72.1" text-anchor="middle">2.4x</text>
+<text class="l" x="189.0" y="189" text-anchor="middle">1000²</text>
+<path d="M228.0,172.0 V136.0 Q228.0,132.0 232.0,132.0 H246.0 Q250.0,132.0 250.0,136.0 V172.0 Z" class="np"><title>NumPy: 1x</title></path>
+<path d="M252.0,172.0 V74.3 Q252.0,70.3 256.0,70.3 H270.0 Q274.0,70.3 274.0,74.3 V172.0 Z" class="nx"><title>numpy2x: 2.54x</title></path>
+<text class="v" x="263.0" y="65.3" text-anchor="middle">2.5x</text>
+<text class="l" x="251.0" y="189" text-anchor="middle">1500²</text>
+<line class="base" x1="34" x2="290" y1="172.0" y2="172.0"/>
+</svg>

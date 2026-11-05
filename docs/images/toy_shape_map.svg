@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="402" viewBox="0 0 400 402" role="img">
+<style>
+  .bg{fill:none}
+  .t{font:600 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#0b0b0b}
+  .l{font:12px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#52514e}
+  .v{font:600 12px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#0b0b0b}
+  .c{font:11px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+  .grid{stroke:#e1e0d9;stroke-width:1}
+  .base{stroke:#c3c2b7;stroke-width:1}
+  .np{fill:#b9b8ae}
+  .nx{fill:#2a78d6}
+  .k0{fill:#c93b3b}.k1{fill:#e98a86}.k2{fill:#f4c6c2}.k3{fill:#f0efec}
+  .k4{fill:#cde2fb}.k5{fill:#86b6ef}.k6{fill:#2a78d6}
+  .dk{fill:#0b0b0b}.lt{fill:#ffffff}
+  @media (prefers-color-scheme: dark){
+    .t,.v{fill:#f0efec}.l{fill:#c3c2b7}
+    .grid{stroke:#2c2c2a}.base{stroke:#383835}
+    .np{fill:#6b6a63}.nx{fill:#3987e5}
+    .k0{fill:#b83232}.k1{fill:#8f3b38}.k2{fill:#5a3331}.k3{fill:#383835}
+    .k4{fill:#1f3a5c}.k5{fill:#25558f}.k6{fill:#3987e5}
+    .dk{fill:#f0efec}
+  }
+</style>
+<text class="t" x="0" y="16">Toy examples: one op, no AILP (median of 7 toy programs)</text>
+<text class="l" x="74.0" y="34" text-anchor="middle">1</text>
+<text class="l" x="118.0" y="34" text-anchor="middle">3</text>
+<text class="l" x="162.0" y="34" text-anchor="middle">10</text>
+<text class="l" x="206.0" y="34" text-anchor="middle">32</text>
+<text class="l" x="250.0" y="34" text-anchor="middle">100</text>
+<text class="l" x="294.0" y="34" text-anchor="middle">316</text>
+<text class="l" x="338.0" y="34" text-anchor="middle">1,000</text>
+<text class="l" x="46" y="66.0" text-anchor="end">1</text>
+<rect class="k2" x="53" y="41" width="42" height="42" rx="3"><title>1 x 1: 0.80x</title></rect><text class="c dk" x="74.0" y="66.0" text-anchor="middle">0.80</text>
+<rect class="k2" x="97" y="41" width="42" height="42" rx="3"><title>1 x 3: 0.80x</title></rect><text class="c dk" x="118.0" y="66.0" text-anchor="middle">0.80</text>
+<rect class="k2" x="141" y="41" width="42" height="42" rx="3"><title>1 x 10: 0.82x</title></rect><text class="c dk" x="162.0" y="66.0" text-anchor="middle">0.82</text>
+<rect class="k1" x="185" y="41" width="42" height="42" rx="3"><title>1 x 32: 0.75x</title></rect><text class="c dk" x="206.0" y="66.0" text-anchor="middle">0.75</text>
+<rect class="k1" x="229" y="41" width="42" height="42" rx="3"><title>1 x 100: 0.74x</title></rect><text class="c dk" x="250.0" y="66.0" text-anchor="middle">0.74</text>
+<rect class="k2" x="273" y="41" width="42" height="42" rx="3"><title>1 x 316: 0.90x</title></rect><text class="c dk" x="294.0" y="66.0" text-anchor="middle">0.90</text>
+<rect class="k4" x="317" y="41" width="42" height="42" rx="3"><title>1 x 1,000: 1.06x</title></rect><text class="c dk" x="338.0" y="66.0" text-anchor="middle">1.06</text>
+<text class="l" x="46" y="110.0" text-anchor="end">3</text>
+<rect class="k1" x="53" y="85" width="42" height="42" rx="3"><title>3 x 1: 0.79x</title></rect><text class="c dk" x="74.0" y="110.0" text-anchor="middle">0.79</text>
+<rect class="k2" x="97" y="85" width="42" height="42" rx="3"><title>3 x 3: 0.86x</title></rect><text class="c dk" x="118.0" y="110.0" text-anchor="middle">0.86</text>
+<rect class="k1" x="141" y="85" width="42" height="42" rx="3"><title>3 x 10: 0.80x</title></rect><text class="c dk" x="162.0" y="110.0" text-anchor="middle">0.80</text>
+<rect class="k1" x="185" y="85" width="42" height="42" rx="3"><title>3 x 32: 0.75x</title></rect><text class="c dk" x="206.0" y="110.0" text-anchor="middle">0.75</text>
+<rect class="k2" x="229" y="85" width="42" height="42" rx="3"><title>3 x 100: 0.85x</title></rect><text class="c dk" x="250.0" y="110.0" text-anchor="middle">0.85</text>
+<rect class="k4" x="273" y="85" width="42" height="42" rx="3"><title>3 x 316: 1.07x</title></rect><text class="c dk" x="294.0" y="110.0" text-anchor="middle">1.07</text>
+<rect class="k4" x="317" y="85" width="42" height="42" rx="3"><title>3 x 1,000: 1.14x</title></rect><text class="c dk" x="338.0" y="110.0" text-anchor="middle">1.14</text>
+<text class="l" x="46" y="154.0" text-anchor="end">10</text>
+<rect class="k2" x="53" y="129" width="42" height="42" rx="3"><title>10 x 1: 0.81x</title></rect><text class="c dk" x="74.0" y="154.0" text-anchor="middle">0.81</text>
+<rect class="k2" x="97" y="129" width="42" height="42" rx="3"><title>10 x 3: 0.80x</title></rect><text class="c dk" x="118.0" y="154.0" text-anchor="middle">0.80</text>
+<rect class="k1" x="141" y="129" width="42" height="42" rx="3"><title>10 x 10: 0.75x</title></rect><text class="c dk" x="162.0" y="154.0" text-anchor="middle">0.75</text>
+<rect class="k2" x="185" y="129" width="42" height="42" rx="3"><title>10 x 32: 0.91x</title></rect><text class="c dk" x="206.0" y="154.0" text-anchor="middle">0.91</text>
+<rect class="k4" x="229" y="129" width="42" height="42" rx="3"><title>10 x 100: 1.08x</title></rect><text class="c dk" x="250.0" y="154.0" text-anchor="middle">1.08</text>
+<rect class="k4" x="273" y="129" width="42" height="42" rx="3"><title>10 x 316: 1.16x</title></rect><text class="c dk" x="294.0" y="154.0" text-anchor="middle">1.16</text>
+<rect class="k4" x="317" y="129" width="42" height="42" rx="3"><title>10 x 1,000: 1.06x</title></rect><text class="c dk" x="338.0" y="154.0" text-anchor="middle">1.06</text>
+<text class="l" x="46" y="198.0" text-anchor="end">32</text>
+<rect class="k1" x="53" y="173" width="42" height="42" rx="3"><title>32 x 1: 0.75x</title></rect><text class="c dk" x="74.0" y="198.0" text-anchor="middle">0.75</text>
+<rect class="k1" x="97" y="173" width="42" height="42" rx="3"><title>32 x 3: 0.76x</title></rect><text class="c dk" x="118.0" y="198.0" text-anchor="middle">0.76</text>
+<rect class="k2" x="141" y="173" width="42" height="42" rx="3"><title>32 x 10: 0.87x</title></rect><text class="c dk" x="162.0" y="198.0" text-anchor="middle">0.87</text>
+<rect class="k4" x="185" y="173" width="42" height="42" rx="3"><title>32 x 32: 1.10x</title></rect><text class="c dk" x="206.0" y="198.0" text-anchor="middle">1.10</text>
+<rect class="k4" x="229" y="173" width="42" height="42" rx="3"><title>32 x 100: 1.16x</title></rect><text class="c dk" x="250.0" y="198.0" text-anchor="middle">1.16</text>
+<rect class="k4" x="273" y="173" width="42" height="42" rx="3"><title>32 x 316: 1.07x</title></rect><text class="c dk" x="294.0" y="198.0" text-anchor="middle">1.07</text>
+<rect class="k3" x="317" y="173" width="42" height="42" rx="3"><title>32 x 1,000: 1.02x</title></rect><text class="c dk" x="338.0" y="198.0" text-anchor="middle">1.02</text>
+<text class="l" x="46" y="242.0" text-anchor="end">100</text>
+<rect class="k1" x="53" y="217" width="42" height="42" rx="3"><title>100 x 1: 0.74x</title></rect><text class="c dk" x="74.0" y="242.0" text-anchor="middle">0.74</text>
+<rect class="k2" x="97" y="217" width="42" height="42" rx="3"><title>100 x 3: 0.87x</title></rect><text class="c dk" x="118.0" y="242.0" text-anchor="middle">0.87</text>
+<rect class="k4" x="141" y="217" width="42" height="42" rx="3"><title>100 x 10: 1.12x</title></rect><text class="c dk" x="162.0" y="242.0" text-anchor="middle">1.12</text>
+<rect class="k4" x="185" y="217" width="42" height="42" rx="3"><title>100 x 32: 1.17x</title></rect><text class="c dk" x="206.0" y="242.0" text-anchor="middle">1.17</text>
+<rect class="k4" x="229" y="217" width="42" height="42" rx="3"><title>100 x 100: 1.06x</title></rect><text class="c dk" x="250.0" y="242.0" text-anchor="middle">1.06</text>
+<rect class="k3" x="273" y="217" width="42" height="42" rx="3"><title>100 x 316: 1.03x</title></rect><text class="c dk" x="294.0" y="242.0" text-anchor="middle">1.03</text>
+<rect class="k4" x="317" y="217" width="42" height="42" rx="3"><title>100 x 1,000: 1.17x</title></rect><text class="c dk" x="338.0" y="242.0" text-anchor="middle">1.17</text>
+<text class="l" x="46" y="286.0" text-anchor="end">316</text>
+<rect class="k2" x="53" y="261" width="42" height="42" rx="3"><title>316 x 1: 0.89x</title></rect><text class="c dk" x="74.0" y="286.0" text-anchor="middle">0.89</text>
+<rect class="k4" x="97" y="261" width="42" height="42" rx="3"><title>316 x 3: 1.11x</title></rect><text class="c dk" x="118.0" y="286.0" text-anchor="middle">1.11</text>
+<rect class="k4" x="141" y="261" width="42" height="42" rx="3"><title>316 x 10: 1.19x</title></rect><text class="c dk" x="162.0" y="286.0" text-anchor="middle">1.19</text>
+<rect class="k4" x="185" y="261" width="42" height="42" rx="3"><title>316 x 32: 1.06x</title></rect><text class="c dk" x="206.0" y="286.0" text-anchor="middle">1.06</text>
+<rect class="k3" x="229" y="261" width="42" height="42" rx="3"><title>316 x 100: 1.01x</title></rect><text class="c dk" x="250.0" y="286.0" text-anchor="middle">1.01</text>
+<rect class="k4" x="273" y="261" width="42" height="42" rx="3"><title>316 x 316: 1.14x</title></rect><text class="c dk" x="294.0" y="286.0" text-anchor="middle">1.14</text>
+<rect class="k6" x="317" y="261" width="42" height="42" rx="3"><title>316 x 1,000: 2.26x</title></rect><text class="c lt" x="338.0" y="286.0" text-anchor="middle">2.26</text>
+<text class="l" x="46" y="330.0" text-anchor="end">1,000</text>
+<rect class="k4" x="53" y="305" width="42" height="42" rx="3"><title>1,000 x 1: 1.10x</title></rect><text class="c dk" x="74.0" y="330.0" text-anchor="middle">1.10</text>
+<rect class="k4" x="97" y="305" width="42" height="42" rx="3"><title>1,000 x 3: 1.18x</title></rect><text class="c dk" x="118.0" y="330.0" text-anchor="middle">1.18</text>
+<rect class="k4" x="141" y="305" width="42" height="42" rx="3"><title>1,000 x 10: 1.06x</title></rect><text class="c dk" x="162.0" y="330.0" text-anchor="middle">1.06</text>
+<rect class="k3" x="185" y="305" width="42" height="42" rx="3"><title>1,000 x 32: 1.02x</title></rect><text class="c dk" x="206.0" y="330.0" text-anchor="middle">1.02</text>
+<rect class="k4" x="229" y="305" width="42" height="42" rx="3"><title>1,000 x 100: 1.16x</title></rect><text class="c dk" x="250.0" y="330.0" text-anchor="middle">1.16</text>
+<rect class="k6" x="273" y="305" width="42" height="42" rx="3"><title>1,000 x 316: 2.29x</title></rect><text class="c lt" x="294.0" y="330.0" text-anchor="middle">2.29</text>
+<rect class="k6" x="317" y="305" width="42" height="42" rx="3"><title>1,000 x 1,000: 2.26x</title></rect><text class="c lt" x="338.0" y="330.0" text-anchor="middle">2.26</text>
+<text class="l" x="0" y="34">rows\cols</text>
+<text class="l" x="0" y="370">speedup vs. NumPy:</text>
+<rect class="k1" x="0" y="382" width="12" height="12" rx="2"/><text class="l" x="16" y="392">0.5–0.8</text>
+<rect class="k2" x="77" y="382" width="12" height="12" rx="2"/><text class="l" x="93" y="392">0.8–0.95</text>
+<rect class="k3" x="161" y="382" width="12" height="12" rx="2"/><text class="l" x="177" y="392">0.95–1.05</text>
+<rect class="k4" x="252" y="382" width="12" height="12" rx="2"/><text class="l" x="268" y="392">1.05–1.25</text>
+<rect class="k6" x="343" y="382" width="12" height="12" rx="2"/><text class="l" x="359" y="392">≥2</text>
+</svg>
