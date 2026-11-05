@@ -150,9 +150,8 @@ Notes:
 
 ## Licenses
 
-The code is under the Clear BSD License ([LICENSE](../LICENSE)); contributions are accepted
-under the same license. numpy2x implements methods patented by ILNumerics; their use is licensed
-by [PATENTS](../PATENTS). Versions that run more than two worker threads per process, perform
-staged execution or are adapted to other languages, array libraries or runtimes are not covered
-by that license, also as forks. Third-party notices: [NOTICE](../NOTICE). Patents:
-https://ilnumerics.net/patents.html.
+The code is under the Clear BSD License ([LICENSE](../LICENSE)). numpy2x implements methods
+patented by ILNumerics; their use is licensed by [PATENTS](../PATENTS). Versions that run more than
+two worker threads per process, perform staged execution or are adapted to other languages, array
+libraries or runtimes are not covered by that license, also as forks. Third-party notices:
+[NOTICE](../NOTICE). Patents: https://ilnumerics.net/patents.html.
