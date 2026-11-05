@@ -5,7 +5,7 @@
 
 int main(void) {
     const char* v = nx_version();
-    if (v == NULL || strcmp(v, "1.0.0") != 0) {
+    if (v == NULL || strcmp(v, NX_EXPECTED_VERSION) != 0) {
         fprintf(stderr, "unexpected version: %s\n", v ? v : "(null)");
         return 1;
     }
