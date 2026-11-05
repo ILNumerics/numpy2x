@@ -82,12 +82,12 @@ will depend on the machine and the program. How to measure your own code: [docs/
 ## Usage
 
 ```bash
-pip install git+https://github.com/ILNumerics/numpy2x
+pip install numpy2x
 ```
 
-Needs Python >= 3.12 (64 bit), NumPy >= 2.5 and, until there are prebuilt wheels, a C++20
-compiler (Visual Studio with the C++ workload on Windows, GCC or Clang on Linux). The build
-takes about a minute.
+Needs Python >= 3.12 (64 bit) and NumPy >= 2.5. Prebuilt wheels exist for Python 3.12 and 3.13
+on Windows x64 and Linux x86_64; elsewhere pip builds from source, which needs a C++20 compiler
+(GCC or Clang; Visual Studio with the C++ workload on Windows) and takes about a minute.
 
 Then pick one:
 
