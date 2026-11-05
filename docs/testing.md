@@ -21,8 +21,7 @@ What you are testing: does your existing NumPy code run with numpy2x, and does i
 - **Python ≥ 3.12, 64-bit.** Check with `python --version`.
 - **NumPy ≥ 2.5.** It is upgraded automatically during installation if needed (see the note below).
 - Prebuilt wheels exist for Python 3.12 and 3.13 on Windows x64 and Linux x86_64. Elsewhere pip
-  compiles numpy2x during
-  installation, which needs a C++20 compiler:
+  compiles numpy2x during installation, which needs a C++20 compiler:
   - **Windows:** Visual Studio 2022 or the *Build Tools for Visual Studio* with the
     *Desktop development with C++* workload
   - **Linux:** a recent GCC or Clang
