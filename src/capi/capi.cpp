@@ -1569,21 +1569,15 @@ int nx_reduce_out(nx_runtime* rt, PyObject* ufunc, nx_array* in, const unsigned 
     }
     const std::size_t nd = l.shape.size();
     SmallVector<char, kInlineRank> flags(nd, 0); // no std::vector<bool>: data()
-    Shape out_shape;
     std::uint64_t axis_bits = 0;
     for (std::size_t i = 0; i < nd; ++i) {
         flags[i] = axes[i] != 0;
-        if (!flags[i]) {
-            out_shape.push_back(l.shape[i]);
-        } else {
+        if (flags[i]) {
             axis_bits |= std::uint64_t{1} << (i % 64);
-            if (keepdims) {
-                out_shape.push_back(1);
-            }
         }
     }
-    Layout out_layout = Layout::contiguous(l.dtype, std::move(out_shape));
     const std::span<const bool> reduced(reinterpret_cast<const bool*>(flags.data()), nd);
+    Layout out_layout = reduction_result(l, reduced, keepdims != 0, l.dtype);
     if (dtype == nullptr) {
         dtype = Py_None;
     }

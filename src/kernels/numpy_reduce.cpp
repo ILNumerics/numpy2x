@@ -33,17 +33,14 @@ bool ReducePlan::supported() const {
 
 ReducePlan plan_reduction(const Layout& in, std::span<const bool> reduced, const Layout& out) {
     const std::size_t nd = in.shape.size();
-    const auto isz = static_cast<std::int64_t>(itemsize(out.dtype));
 
-    // Result stride of each kept input axis: the result is C-contiguous over
-    // the kept axes (extent-1 dimensions for reduced axes, if kept, add
-    // nothing).
+    // Result stride of each kept input axis, from `out` (with or without
+    // the reduced axes kept).
     std::vector<std::int64_t> out_stride(nd, 0);
-    std::int64_t step = isz;
-    for (std::size_t i = nd; i-- > 0;) {
+    const bool kept_all = out.shape.size() == nd;
+    for (std::size_t i = 0, j = 0; i < nd; ++i) {
         if (!reduced[i]) {
-            out_stride[i] = step;
-            step *= in.shape[i];
+            out_stride[i] = out.strides[kept_all ? i : j++];
         }
     }
 

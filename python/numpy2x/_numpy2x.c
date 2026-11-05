@@ -353,6 +353,7 @@ static int Array_set_warn_on_write(ArrayObject* self, PyObject* v, void* c) {
 }
 
 static int c_contiguous(const nx_array* a);
+static int c_ordered(const nx_array* a);
 
 static PyObject* Array_get_size(ArrayObject* self, void* c) {
     (void)c;
@@ -368,6 +369,11 @@ static PyObject* Array_get_size(ArrayObject* self, void* c) {
 static PyObject* Array_get_c_contiguous(ArrayObject* self, void* c) {
     (void)c;
     return PyBool_FromLong(c_contiguous(self->a));
+}
+
+static PyObject* Array_get_c_ordered(ArrayObject* self, void* c) {
+    (void)c;
+    return PyBool_FromLong(c_ordered(self->a));
 }
 
 static PyObject* Array_get_base(ArrayObject* self, void* c) {
@@ -776,6 +782,8 @@ static PyGetSetDef Array_getset[] = {
      "NumPy's flags object of the layout (no sync): a new snapshot per access.", NULL},
     {"_c_contiguous", (getter)Array_get_c_contiguous, NULL,
      "C-contiguous, as NumPy's flag (no sync).", NULL},
+    {"_c_ordered", (getter)Array_get_c_ordered, NULL,
+     "C order with C strides on every axis, also of extent 1 (no sync).", NULL},
     {"_scalar", (getter)Array_get_scalar, (setter)Array_set_scalar,
      "0-d result NumPy would return as a scalar: in-place operators rebind, as on NumPy's "
      "scalars",
@@ -1402,16 +1410,32 @@ static int c_contiguous(const nx_array* a) {
     const int64_t* strides = nx_array_strides(a);
     static const int64_t itemsizes[] = {1, 4, 8, 4, 8, 8, 16}; /* nx_dtype order */
     int64_t step = itemsizes[nx_array_dtype(a)];
+    int contiguous = 1;
     for (int i = nd; i-- > 0;) {
         if (shape[i] == 0) {
-            return 1;
+            return 1; /* no elements: contiguous whatever the strides */
         }
         if (shape[i] != 1) {
-            if (strides[i] != step) {
-                return 0;
-            }
+            contiguous &= strides[i] == step;
             step *= shape[i];
         }
+    }
+    return contiguous;
+}
+
+/* C order with every stride NumPy's C order gives, also along extent-1 axes
+ * (NumPy orders a result's axes by them). */
+static int c_ordered(const nx_array* a) {
+    const int nd = nx_array_ndim(a);
+    const int64_t* shape = nx_array_shape(a);
+    const int64_t* strides = nx_array_strides(a);
+    static const int64_t itemsizes[] = {1, 4, 8, 4, 8, 8, 16}; /* nx_dtype order */
+    int64_t step = itemsizes[nx_array_dtype(a)];
+    for (int i = nd; i-- > 0;) {
+        if (strides[i] != step) {
+            return 0;
+        }
+        step *= shape[i];
     }
     return 1;
 }
@@ -1456,15 +1480,30 @@ static PyObject* elision_candidate(PyObject* const* inputs, nx_array* const* ins
 
 /* --- scalar shortcut ------------------------------------------------------ */
 
-/* An op on scalars only (ready 0-d numpy2x arrays, Python and NumPy scalars)
- * has nothing to run asynchronously: NumPy computes it right here, on NumPy
+/* An op on scalars only (ready 0-d numpy2x arrays standing for NumPy scalars,
+ * `_scalar`; Python and NumPy scalars) has nothing to run asynchronously: NumPy computes it right here, on NumPy
  * scalars, as the NumPy program would (its 0-d values are NumPy scalars:
  * reductions and scalar indexing return them, and ufuncs on 0-d arrays do
  * too). Its result is NumPy's: a NumPy scalar. Any n-d operand (even of one
- * element) keeps the array path, so NumPy's output shapes stay as they
+ * element) and a plain 0-d array (NumPy's 0-d array) keep the array path, so NumPy's output shapes stay as they
  * are. Fills `out` (capacity `out_len` entries, at least `n`) with new
  * references and returns 1, or 0 if an operand is not a ready scalar. Call it
  * through SCALARS_OF, which passes the length of the `out` array. */
+static int end_borrow(nx_array* a, PyObject* view);
+
+/* Releases what scalars_of() filled in: borrowed views end their borrow. */
+static void release_scalars(PyObject* const* inputs, PyObject** out, Py_ssize_t n) {
+    for (Py_ssize_t i = 0; i < n; ++i) {
+        if (is_array(inputs[i]) && !((ArrayObject*)inputs[i])->scalar) {
+            if (end_borrow(((ArrayObject*)inputs[i])->a, out[i]) < 0) {
+                PyErr_WriteUnraisable(inputs[i]);
+            }
+        } else {
+            Py_DECREF(out[i]);
+        }
+    }
+}
+
 static int scalars_of(PyObject* const* inputs, Py_ssize_t n, PyObject** out, Py_ssize_t out_len) {
     if (n > MAXIN) {
         return 0;
@@ -1489,11 +1528,15 @@ static int scalars_of(PyObject* const* inputs, Py_ssize_t n, PyObject** out, Py_
     }
     for (Py_ssize_t i = 0; i < n; ++i) {
         PyObject* x = inputs[i];
-        out[i] = is_array(x) ? nx_array_scalar(((ArrayObject*)x)->a) : Py_NewRef(x);
+        /* A stand-in for a NumPy scalar (`_scalar`) becomes that scalar; a
+         * plain 0-d array stays one (a borrowed view): NumPy computes on
+         * 0-d arrays with its array loops, on scalars partly with other
+         * code (complex64 square differs in the last bit). */
+        out[i] = !is_array(x)                  ? Py_NewRef(x)
+                 : ((ArrayObject*)x)->scalar ? nx_array_scalar(((ArrayObject*)x)->a)
+                                             : nx_array_borrow(((ArrayObject*)x)->a);
         if (out[i] == NULL) {
-            for (Py_ssize_t j = 0; j < i; ++j) {
-                Py_DECREF(out[j]);
-            }
+            release_scalars(inputs, out, i);
             return -1;
         }
     }
@@ -1503,12 +1546,6 @@ static int scalars_of(PyObject* const* inputs, Py_ssize_t n, PyObject** out, Py_
 /* `out` must be an array (not a pointer): its length is checked against n. */
 #define SCALARS_OF(inputs, n, out)                                                                 \
     scalars_of((inputs), (n), (out), (Py_ssize_t)(sizeof(out) / sizeof((out)[0])))
-
-static void release_all(PyObject** objs, Py_ssize_t n) {
-    for (Py_ssize_t i = 0; i < n; ++i) {
-        Py_DECREF(objs[i]);
-    }
-}
 
 /* --- the ufunc fast path -------------------------------------------------- */
 
@@ -1845,7 +1882,7 @@ static PyObject* Array_array_ufunc(PyObject* self, PyObject* const* args, Py_ssi
             }
             if (k > 0) {
                 PyObject* r = PyObject_Vectorcall(args[0], sc, (size_t)n, NULL);
-                release_all(sc, n);
+                release_scalars(inputs, sc, n);
                 return r;
             }
         }
@@ -1932,7 +1969,7 @@ static PyObject* binop(const char* name, binaryfunc scalar_op, PyObject* a, PyOb
     if (k != 0) {
         PyObject* r = k > 0 ? scalar_op(sc[0], sc[1]) : NULL;
         if (k > 0) {
-            release_all(sc, 2);
+            release_scalars(in2, sc, 2);
         }
         return r;
     }
@@ -1980,7 +2017,9 @@ static PyObject* unop(const char* name, unaryfunc scalar_op, PyObject* a) {
     const int k = SCALARS_OF(&a, 1, sc);
     if (k != 0) {
         PyObject* r = k > 0 ? scalar_op(sc[0]) : NULL;
-        Py_XDECREF(k > 0 ? sc[0] : NULL);
+        if (k > 0) {
+            release_scalars(&a, sc, 1);
+        }
         return r;
     }
     PyObject* ufunc = op_ufunc(name);
@@ -4883,7 +4922,7 @@ static PyObject* UfuncProxy_vectorcall(PyObject* self, PyObject* const* args, si
             }
             if (k > 0) {
                 PyObject* r = PyObject_Vectorcall(uf, sc, (size_t)n, NULL);
-                release_all(sc, n);
+                release_scalars(args, sc, n);
                 return r;
             }
             PyObject* result = NULL;
