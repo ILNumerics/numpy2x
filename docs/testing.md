@@ -20,34 +20,28 @@ What you are testing: does your existing NumPy code run with numpy2x, and does i
 
 - **Python ≥ 3.12, 64-bit.** Check with `python --version`.
 - **NumPy ≥ 2.5.** It is upgraded automatically during installation if needed (see the note below).
-- **A C++20 compiler.** There are no prebuilt wheels yet, so numpy2x is compiled during installation:
+- Prebuilt wheels exist for Python 3.12 and 3.13 on Windows x64 and Linux x86_64. Elsewhere pip
+  compiles numpy2x during installation, which needs a C++20 compiler:
   - **Windows:** Visual Studio 2022 or the *Build Tools for Visual Studio* with the
     *Desktop development with C++* workload
   - **Linux:** a recent GCC or Clang
-- **git**, only for the first install command below. pip fetches CMake and Ninja itself.
+
+  pip fetches CMake and Ninja itself.
 
 ## 2. Install into your existing Python
 
 Use the same Python installation that you (or your IDE) normally work with:
 
 ```bash
-python -m pip install "numpy2x @ git+https://github.com/ILNumerics/numpy2x"
+python -m pip install numpy2x
 ```
-
-Without git:
-
-```bash
-python -m pip install "numpy2x @ https://github.com/ILNumerics/numpy2x/archive/refs/heads/main.zip"
-```
-
-The build takes about a minute.
 
 > [!WARNING]
 > pip upgrades NumPy in this environment to ≥ 2.5. Packages that require an older NumPy may stop working
 > (for example, Numba reports *"Numba needs NumPy 2.1 or less"*). Check beforehand with:
 >
 > ```bash
-> python -m pip install --dry-run "numpy2x @ git+https://github.com/ILNumerics/numpy2x"
+> python -m pip install --dry-run numpy2x
 > ```
 
 **Safer alternative:** a separate environment that still sees all your installed packages. The new NumPy
