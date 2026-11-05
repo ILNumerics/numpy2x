@@ -205,8 +205,15 @@ struct nx_runtime {
     std::map<std::tuple<const numpy::UfuncLoop*, std::vector<std::vector<int>>, std::string, int>,
              std::shared_ptr<Kernel>>
         gufunc_kernels;
-    // Fast-path reduce kernels (ReduceKey), cleared when it grows large.
-    std::unordered_map<ReduceKey, std::shared_ptr<Kernel>, ReduceKeyHash> reduce_kernels;
+    // Fast-path reduce kernels (ReduceKey) with their result layouts
+    // (reduction_result without and with keepdims), cleared when it grows
+    // large.
+    struct ReduceEntry {
+        std::shared_ptr<Kernel> kernel;
+        Layout out[2];
+        bool laid_out = false; // out[] set
+    };
+    std::unordered_map<ReduceKey, ReduceEntry, ReduceKeyHash> reduce_kernels;
 };
 
 // A nx_array* is an Array* holding one reference (no wrapper allocation).
@@ -1577,7 +1584,6 @@ int nx_reduce_out(nx_runtime* rt, PyObject* ufunc, nx_array* in, const unsigned 
         }
     }
     const std::span<const bool> reduced(reinterpret_cast<const bool*>(flags.data()), nd);
-    Layout out_layout = reduction_result(l, reduced, keepdims != 0, l.dtype);
     if (dtype == nullptr) {
         dtype = Py_None;
     }
@@ -1588,13 +1594,16 @@ int nx_reduce_out(nx_runtime* rt, PyObject* ufunc, nx_array* in, const unsigned 
     key.layout.offset = 0;
     const bool cacheable = dtype == Py_None && nd <= 64 && identity_key(identity, key.identity);
     std::shared_ptr<Kernel> kernel;
+    Layout out_layout;
     if (cacheable) {
         auto it = rt->reduce_kernels.find(key);
-        if (it != rt->reduce_kernels.end()) {
-            kernel = it->second;
+        if (it != rt->reduce_kernels.end() && it->second.laid_out) {
+            kernel = it->second.kernel;
+            out_layout = it->second.out[keepdims != 0];
         }
     }
     if (!kernel) {
+        out_layout = reduction_result(l, reduced, keepdims != 0, l.dtype);
         kernel = make_fast_reduce_kernel(rt, ufunc, l, reduced, out_layout, dtype, identity);
         if (!kernel && PyErr_Occurred()) {
             return NX_PYERR;
@@ -1603,7 +1612,11 @@ int nx_reduce_out(nx_runtime* rt, PyObject* ufunc, nx_array* in, const unsigned 
             if (rt->reduce_kernels.size() >= 4096) {
                 rt->reduce_kernels.clear();
             }
-            rt->reduce_kernels.emplace(std::move(key), kernel);
+            nx_runtime::ReduceEntry& entry = rt->reduce_kernels[std::move(key)];
+            entry.kernel = kernel;
+            entry.out[0] = reduction_result(l, reduced, false, l.dtype);
+            entry.out[1] = reduction_result(l, reduced, true, l.dtype);
+            entry.laid_out = true;
         }
     }
     if (!kernel) {
