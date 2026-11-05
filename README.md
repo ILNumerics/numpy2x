@@ -109,7 +109,7 @@ Known differences, IDE setup and how to report results: [docs/testing.md](docs/t
 
 ## Where it comes from
 
-numpy2x gets its core from **viproc**, a remake of the
+numpy2x gets its core from [**viproc**](https://github.com/hokb/viproc), a remake of the
 [ILNumerics Accelerator](https://ilnumerics.net/auto-parallelizing-numerical-code.html)
 (proprietary, .NET). ILNumerics develops and uses strong-scaling methods that find the
 parallel potential in sequentially written algorithms automatically and turn it into parallel
