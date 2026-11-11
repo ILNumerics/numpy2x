@@ -52,7 +52,7 @@ keeps exactly that order where it matters and overlaps everything else: 1.9x on 
 <tr>
 <td>
 
-**2. [k-means](https://github.com/ILNumerics/numpy2x/blob/main/python/benchmarks/readme_examples.py#L59-L72)**, the program from the
+**2. [k-means](https://github.com/ILNumerics/numpy2x/blob/main/python/benchmarks/readme_examples.py#L59-L72)**, the iterative program from the
 [ILNumerics Accelerator](https://ilnumerics.net/auto-parallelizing-numerical-code.html)
 [benchmarks](https://github.com/hokb/decentralized-array-execution-artifacts2026): a plain loop over the points, per point the distances to all centers and `argmin`,
 then a center update per cluster (k = 50, k = 15 for the smallest size; 3 rounds). Already
