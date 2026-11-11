@@ -1,7 +1,7 @@
 # numpy2x
 
-**Parallel between NumPy operations, not inside them. One switch, two more cores: your NumPy
-program about 2x faster, with bit-identical results.**
+**Your NumPy program runs its operations concurrently: Array Instruction Level Parallelism
+(AILP). One switch, two more cores, about 2x faster, with bit-identical results.**
 
 ```bash
 python -m numpy2x prog.py        # instead of: python prog.py
@@ -20,7 +20,7 @@ threads per process, also in your own cloud applications, but not on clusters.
 
 ## How it works, in one paragraph
 
-numpy2x adds AILP (array instruction level parallelism) to NumPy: every NumPy operation (`a +
+numpy2x adds AILP to NumPy: every NumPy operation (`a +
 b`, `np.sin(x)`, `x.sum(axis=0)`, `a @ b`, ...) becomes a small task. Your Python thread only
 issues these tasks and runs ahead; two worker threads compute them as soon as their inputs are
 ready. Operations that do not depend on each other run at the same time, across loop iterations
