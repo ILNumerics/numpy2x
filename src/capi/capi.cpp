@@ -37,14 +37,21 @@ struct Graveyard {
     std::mutex mutex;
     std::vector<PyObject*> objects;
     std::vector<std::function<void()>> releases; // kernels' Python state
+    // Set under the mutex when something is parked: drain() runs at every C
+    // ABI call and took the mutex (a cache line the workers write) each time.
+    std::atomic<bool> nonempty{false};
 
     void drain() {
+        if (!nonempty.load(std::memory_order_acquire)) {
+            return;
+        }
         std::vector<PyObject*> dead;
         std::vector<std::function<void()>> todo;
         {
             std::lock_guard lock(mutex);
             dead.swap(objects);
             todo.swap(releases);
+            nonempty.store(false, std::memory_order_relaxed);
         }
         for (PyObject* o : dead) {
             Py_DECREF(o);
@@ -66,6 +73,7 @@ numpy::DeferRelease defer_release(const std::shared_ptr<Graveyard>& graveyard) {
         } else if (auto g = weak.lock()) {
             std::lock_guard lock(g->mutex);
             g->releases.push_back(std::move(f));
+            g->nonempty.store(true, std::memory_order_release);
         }
     };
 }
@@ -80,6 +88,7 @@ std::shared_ptr<void> python_owner(const std::shared_ptr<Graveyard>& graveyard, 
         } else if (auto g = weak.lock()) {
             std::lock_guard lock(g->mutex);
             g->objects.push_back(o);
+            g->nonempty.store(true, std::memory_order_release);
         } // else: runtime gone, interpreter shutting down; leak
     });
 }
@@ -614,8 +623,24 @@ int nx_ufunc_issue(nx_runtime* rt, const nx_loop* loop, nx_array* const* inputs,
         set_error(err, errlen, "too many inputs");
         return NX_UNSUPPORTED;
     }
+    bool scalar = out_ndim == 0 && out == nullptr;
     for (int i = 0; i < nin; ++i) {
         ins[i] = ref(inputs[i]);
+        scalar = scalar && ins[i]->layout().shape.empty() &&
+                 ins[i]->layout().dtype == loop->dtypes[static_cast<std::size_t>(i)];
+    }
+    if (scalar) {
+        // 0-d inputs of the loop's dtypes, a 0-d result (`s + t`, `x[i - 1] + s`
+        // in loops): one loop call over one element, as NumPy's trivial loop
+        // makes it. The layout is a constant, the kernel the loop's shared one:
+        // no order-K layout, no single-call check, no cast check.
+        Layout l = Layout::contiguous(loop->dtypes[static_cast<std::size_t>(nin)], {});
+        ArrayPtr res;
+        rt->rt->issue(loop->loop->elementwise_kernel(),
+                      std::span<const ArrayPtr>(ins, static_cast<std::size_t>(nin)), {},
+                      std::span(&l, 1), site, std::span(&res, 1));
+        *result = hand_out(std::move(res));
+        return NX_OK;
     }
     if (!cast_small_inputs(rt, *loop, std::span(ins, static_cast<std::size_t>(nin)), site, err,
                            errlen)) {
