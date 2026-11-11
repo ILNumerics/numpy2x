@@ -1,10 +1,17 @@
 # numpy2x
 
-**One switch. Two more cores. Your NumPy code, about 2x faster, with bit-identical results.**
+**Parallel between NumPy operations, not inside them. One switch, two more cores: your NumPy
+program about 2x faster, with bit-identical results.**
 
 ```bash
 python -m numpy2x prog.py        # instead of: python prog.py
 ```
+
+Multithreaded NumPy backends split one large operation, such as an FFT or a matrix product,
+across threads. numpy2x leaves every operation as NumPy computes it and runs *different*
+operations at the same time: independent operations across lines, loop iterations and function
+calls of your program. So it also speeds up programs made of many small and medium operations, where
+splitting a single one does not pay.
 
 numpy2x runs ordinary NumPy programs on two extra CPU cores. No annotations, no rewrite, no new
 API: the same code, the same results down to the last bit, in less time. Free: Clear BSD
