@@ -169,6 +169,12 @@ is a sync point, where the program waits for that result. Never measure times in
 - `np.array(a)` and `np.asarray(a)` always copy a NumPy array into numpy2x, even with `copy=False`.
 - Data types numpy2x does not run (object, str, float16, …) give plain NumPy arrays.
 - On very small data, numpy2x can be slightly slower than NumPy.
+- BLAS (OpenBLAS in NumPy's wheels) runs on one thread while numpy2x runs; numpy2x's workers
+  parallelize instead. OpenBLAS splits large matrix products by its thread count, so their results
+  are bit-identical to NumPy run with `OPENBLAS_NUM_THREADS=1` and may differ from NumPy's default in
+  the last bits. A single large product with nothing to overlap is slower than NumPy's multi-threaded
+  one; independent linear algebra calls get faster. The setting is process-wide (plain NumPy calls in
+  the same process run single-threaded too) and is restored by `numpy2x.shutdown()`.
 
 ## 8. Feedback
 

@@ -20,7 +20,7 @@ import weakref
 import numpy as np  # imports the real NumPy, not numpy2x
 from numpy.lib.array_utils import normalize_axis_index, normalize_axis_tuple
 
-from . import _numpy2x
+from . import _blas, _numpy2x
 
 AsyncError = _numpy2x.AsyncError
 AsyncIndexError = _numpy2x.AsyncIndexError
@@ -54,6 +54,7 @@ def _ensure_runtime():
     if not _numpy2x.initialized():
         sync_below, adaptive = _env_policy()
         _numpy2x.init(0, sync_below, adaptive)
+        _blas.apply()
         _small_ops[0] = 2048 if sync_below < 0 else sync_below
         _scale_budget(adaptive)
 
@@ -1986,6 +1987,7 @@ def init(max_active_tasks=0, sync_below=None, adaptive=None):
     finally:
         adaptive = env_adaptive if adaptive is None else adaptive
         _numpy2x.init(max_active_tasks, sync_below, adaptive)
+        _blas.apply()
         _small_ops[0] = 2048 if sync_below < 0 else sync_below
         _scale_budget(adaptive)
 
@@ -2026,7 +2028,10 @@ def shutdown():
     """Waits for all ops and stops the runtime. Raises the error of a failed op
     that was not reported yet (at exit Python prints it)."""
     if _numpy2x.initialized():
-        _numpy2x.shutdown()
+        try:
+            _numpy2x.shutdown()
+        finally:
+            _blas.restore()  # the BLAS thread count from before the runtime
 
 
 def workers():
