@@ -56,6 +56,7 @@ static long long g_small = 2048; /* the runtime's sync_below: ops this small run
 /* Registered by _ndarray.py via _numpy2x.setup(). */
 static PyTypeObject* g_array_cls = NULL; /* numpy2x.ndarray */
 static PyObject* g_dtypes[7];            /* np.dtype per nx_dtype code */
+static PyObject* g_scalar_types[7];      /* its scalar type (np.float64, ...) */
 static int g_alignment[7];               /* np.dtype(...).alignment per nx_dtype code */
 static PyObject* g_matmul = NULL;        /* np.matmul */
 static PyObject* g_fallback = NULL;      /* fallback(ufunc, method, inputs, kwargs) */
@@ -1590,6 +1591,14 @@ static int input_kind(PyObject* x) {
     if (PyComplex_CheckExact(x)) {
         return K_PYCOMPLEX;
     }
+    for (int c = 0; c < 7; ++c) {
+        /* NumPy's scalar of a numpy2x dtype (a[i] of a ready array, a full
+         * reduction): its type says the dtype, no attribute lookup and
+         * comparison of dtype objects (~0.4 us per op) */
+        if ((PyObject*)Py_TYPE(x) == g_scalar_types[c]) {
+            return c;
+        }
+    }
     if (PyObject_TypeCheck(x, (PyTypeObject*)g_np_generic) ||
         PyObject_TypeCheck(x, (PyTypeObject*)g_np_ndarray)) {
         PyObject* dt = PyObject_GetAttrString(x, "dtype");
@@ -1949,6 +1958,11 @@ static int defers(PyObject* other) {
         PyComplex_CheckExact(other) || PyBool_Check(other)) {
         return 0;
     }
+    for (int c = 0; c < 7; ++c) {
+        if ((PyObject*)Py_TYPE(other) == g_scalar_types[c]) {
+            return 0; /* NumPy's own scalar types never opt out: no attribute lookup */
+        }
+    }
     PyObject* au = PyObject_GetAttrString((PyObject*)Py_TYPE(other), "__array_ufunc__");
     if (au == NULL) {
         PyErr_Clear();
@@ -2204,6 +2218,7 @@ static PyMethodDef Array_methods[] = {
 };
 
 static PyObject* m_item(PyObject* self, PyObject* const* args, Py_ssize_t nargs);
+static PyObject* pending_item(PyObject* a, PyObject* key);
 static PyObject* m_basic_view(PyObject* self, PyObject* const* args, Py_ssize_t nargs);
 static int basic_layout(nx_array* x, PyObject* key, int* out_nd, int64_t* nshape, int64_t* nstrides,
                         int64_t* out_offset);
@@ -2219,6 +2234,13 @@ static PyObject* Array_subscript(PyObject* self, PyObject* key) {
         return r; /* NumPy's scalar, or NULL */
     }
     Py_DECREF(r);
+    if (!nx_array_ready(((ArrayObject*)self)->a)) {
+        r = pending_item(self, key);
+        if (r != Py_None) {
+            return r; /* a pending 0-d copy, or NULL */
+        }
+        Py_DECREF(r);
+    }
     r = m_basic_view(NULL, args, 2);
     if (r == NULL) {
         return NULL;
@@ -2464,6 +2486,10 @@ static PyObject* m_setup(PyObject* self, PyObject* args) {
     Py_XSETREF(g_array_cls, (PyTypeObject*)Py_NewRef(cls));
     for (int c = 0; c < 7; ++c) {
         Py_XSETREF(g_dtypes[c], Py_NewRef(PyTuple_GET_ITEM(dtypes, c)));
+        Py_XSETREF(g_scalar_types[c], PyObject_GetAttrString(g_dtypes[c], "type"));
+        if (g_scalar_types[c] == NULL) {
+            return NULL;
+        }
         PyObject* al = PyObject_GetAttrString(g_dtypes[c], "alignment");
         g_alignment[c] = al != NULL ? (int)PyLong_AsLong(al) : -1;
         Py_XDECREF(al);
@@ -3231,6 +3257,75 @@ static PyObject* m_scalar(PyObject* self, PyObject* a) {
 /* item(a, key): for an integer key (an int, or a tuple of one int per
  * dimension) the element as NumPy's scalar if `a` is ready; None if `a` is
  * pending or the key is something else. IndexError as NumPy's. */
+/* The byte offset of the element an integer key (an int, or a tuple of one
+ * int per dimension) selects in x: 1, and *offset; 0 for any other key
+ * (arrays, slices, masks, np.bool_: the general path); -1 with NumPy's
+ * IndexError. */
+static int int_key_offset(nx_array* x, PyObject* key, int64_t* offset) {
+    const int nd = nx_array_ndim(x);
+    const Py_ssize_t nk = PyTuple_Check(key) ? PyTuple_GET_SIZE(key) : 1;
+    if (nk != nd || nd == 0) {
+        return 0;
+    }
+    const int64_t* shape = nx_array_shape(x);
+    const int64_t* strides = nx_array_strides(x);
+    *offset = 0;
+    for (int i = 0; i < nd; ++i) {
+        PyObject* k = PyTuple_Check(key) ? PyTuple_GET_ITEM(key, i) : key;
+        if (PyBool_Check(k) ||
+            !(PyLong_Check(k) ||
+              (g_np_integer != NULL && PyObject_TypeCheck(k, (PyTypeObject*)g_np_integer)))) {
+            return 0;
+        }
+        const Py_ssize_t v = PyNumber_AsSsize_t(k, PyExc_IndexError);
+        if (v == -1 && PyErr_Occurred()) {
+            return -1;
+        }
+        if (v < -shape[i] || v >= shape[i]) {
+            PyErr_Format(PyExc_IndexError, "index %zd is out of bounds for axis %d with size %lld",
+                         v, i, (long long)shape[i]);
+            return -1;
+        }
+        *offset += (v < 0 ? v + shape[i] : v) * strides[i];
+    }
+    return 1;
+}
+
+/* a[i, ...] of a pending array: NumPy's scalar, a snapshot, so a 0-d copy
+ * of the element (one placement task, no view object), marked `_scalar`.
+ * None if the key is no integer key or the copy is unsupported. */
+static PyObject* pending_item(PyObject* a, PyObject* key) {
+    nx_array* x = array_of(a);
+    int64_t offset = 0;
+    const int k = int_key_offset(x, key, &offset);
+    if (k <= 0) {
+        return k < 0 ? NULL : Py_NewRef(Py_None);
+    }
+    const nx_dtype dt = nx_array_dtype(x);
+    int64_t zero = 0;
+    nx_array* e = nx_array_view(g_rt, x, dt, 0, &zero, &zero, offset);
+    if (e == NULL) {
+        Py_RETURN_NONE;
+    }
+    const int part_ndim = 0;
+    nx_array* r = NULL;
+    char err[ERRLEN] = "";
+    const int st = nx_place(g_rt, dt, 0, &zero, NULL, 1, &e, &part_ndim, &zero, &zero, &zero, &r,
+                            issue_site(), err, sizeof err);
+    nx_array_release(e);
+    if (st == NX_UNSUPPORTED) {
+        Py_RETURN_NONE;
+    }
+    if (raise_status(st, err) < 0) {
+        return NULL;
+    }
+    PyObject* res = wrap_array(r);
+    if (res != NULL) {
+        ((ArrayObject*)res)->scalar = 1;
+    }
+    return res;
+}
+
 static PyObject* m_item(PyObject* self, PyObject* const* args, Py_ssize_t nargs) {
     (void)self;
     if (array_and_arg(args, nargs) < 0) {
@@ -3238,31 +3333,13 @@ static PyObject* m_item(PyObject* self, PyObject* const* args, Py_ssize_t nargs)
     }
     PyObject *a = args[0], *key = args[1];
     nx_array* x = array_of(a);
-    const int nd = nx_array_ndim(x);
-    const Py_ssize_t nk = PyTuple_Check(key) ? PyTuple_GET_SIZE(key) : 1;
-    if (nk != nd || nd == 0 || !nx_array_ready(x)) {
+    if (!nx_array_ready(x)) {
         Py_RETURN_NONE;
     }
-    const int64_t* shape = nx_array_shape(x);
-    const int64_t* strides = nx_array_strides(x);
     int64_t offset = 0;
-    for (int i = 0; i < nd; ++i) {
-        PyObject* k = PyTuple_Check(key) ? PyTuple_GET_ITEM(key, i) : key;
-        if (PyBool_Check(k) ||
-            !(PyLong_Check(k) ||
-              (g_np_integer != NULL && PyObject_TypeCheck(k, (PyTypeObject*)g_np_integer)))) {
-            Py_RETURN_NONE; /* arrays, slices, masks, np.bool_: the general path */
-        }
-        const Py_ssize_t v = PyNumber_AsSsize_t(k, PyExc_IndexError);
-        if (v == -1 && PyErr_Occurred()) {
-            return NULL;
-        }
-        if (v < -shape[i] || v >= shape[i]) {
-            PyErr_Format(PyExc_IndexError, "index %zd is out of bounds for axis %d with size %lld",
-                         v, i, (long long)shape[i]);
-            return NULL;
-        }
-        offset += (v < 0 ? v + shape[i] : v) * strides[i];
+    const int k = int_key_offset(x, key, &offset);
+    if (k <= 0) {
+        return k < 0 ? NULL : Py_NewRef(Py_None);
     }
     int64_t zero = 0;
     nx_array* e = nx_array_view(g_rt, x, nx_array_dtype(x), 0, &zero, &zero, offset);
