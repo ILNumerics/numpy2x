@@ -1,10 +1,17 @@
 # numpy2x
 
-**One switch. Two more cores. Your NumPy code, about 2x faster, with bit-identical results.**
+**Your NumPy program runs its operations concurrently: Array Instruction Level Parallelism
+(AILP). One switch, two more cores, about 2x faster, with bit-identical results.**
 
 ```bash
 python -m numpy2x prog.py        # instead of: python prog.py
 ```
+
+Multithreaded NumPy backends split one large operation, such as an FFT or a matrix product,
+across threads. numpy2x leaves every operation as NumPy computes it and runs *different*
+operations at the same time: independent operations across lines, loop iterations and function
+calls of your program. So it also speeds up programs made of many small and medium operations, where
+splitting a single one does not pay.
 
 numpy2x runs ordinary NumPy programs on two extra CPU cores. No annotations, no rewrite, no new
 API: the same code, the same results down to the last bit, in less time. Free: Clear BSD
@@ -13,7 +20,7 @@ threads per process, also in your own cloud applications, but not on clusters.
 
 ## How it works, in one paragraph
 
-numpy2x adds AILP (array instruction level parallelism) to NumPy: every NumPy operation (`a +
+numpy2x adds AILP to NumPy: every NumPy operation (`a +
 b`, `np.sin(x)`, `x.sum(axis=0)`, `a @ b`, ...) becomes a small task. Your Python thread only
 issues these tasks and runs ahead; two worker threads compute them as soon as their inputs are
 ready. Operations that do not depend on each other run at the same time, across loop iterations
@@ -45,7 +52,7 @@ keeps exactly that order where it matters and overlaps everything else: 1.9x on 
 <tr>
 <td>
 
-**2. [k-means](https://github.com/ILNumerics/numpy2x/blob/main/python/benchmarks/readme_examples.py#L59-L72)**, the program from the
+**2. [k-means](https://github.com/ILNumerics/numpy2x/blob/main/python/benchmarks/readme_examples.py#L59-L72)**, the iterative program from the
 [ILNumerics Accelerator](https://ilnumerics.net/auto-parallelizing-numerical-code.html)
 [benchmarks](https://github.com/hokb/decentralized-array-execution-artifacts2026): a plain loop over the points, per point the distances to all centers and `argmin`,
 then a center update per cluster (k = 50, k = 15 for the smallest size; 3 rounds). Already
